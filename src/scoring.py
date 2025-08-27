@@ -5,8 +5,8 @@ import pandas as pd
 import time
 import signal
 
-reference_dir = 'src/data' #replace with the path to the reference data (dev.csv)
-prediction_dir = 'src/data/'#replace with the path to the prediction data (submission.json)
+reference_dir = 'data' #replace with the path to the reference data (dev.csv)
+prediction_dir = 'data'#replace with the path to the prediction data (submission.json)
 
 
 #Do not modify anything below this part
@@ -112,7 +112,7 @@ def evaluate_combined_data(res_data, ref_data):
 
 
 # Read both files
-with open(os.path.join(prediction_dir,'submission.json'), 'r', encoding='utf-8') as f:
+with open(os.path.join(prediction_dir,'submission-gpt5.json'), 'r', encoding='utf-8') as f:
     res_data = json.load(f)
 
 
