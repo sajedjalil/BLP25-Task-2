@@ -112,10 +112,6 @@
         "response":" def div_even_odd(lst):\n        return [i for i in lst if i % 2 == 0] + [i for i in lst if i % 2 != 0]"
     },
     {
-        "id":29,
-        "response":" from collections import Counter\n\ndef rearange_string(S):\n    c = Counter(S)\n    chars = []\n    for i in c:\n        chars.extend([i] * c[i])\n    result = []\n    while len(chars) > 1:\n        for i in range(0, len(chars), 2):\n            if i+1 < len(chars) and chars[i] != chars[i+1]:\n                result.append(chars[i])\n                result.append(chars[i+1])\n                chars[i] = None\n                chars[i+1] = None\n    while chars:\n        result.append(chars.pop(0))\n    return ''.join(result)"
-    },
-    {
         "id":30,
         "response":" from collections import Counter\n     from typing import List\n\n     def freq_element(nums: List[int]) -> List[float]:\n         return [i \/ len(nums) for i in Counter(nums).values()]"
     },
@@ -602,10 +598,6 @@
     {
         "id":151,
         "response":" from typing import List\n\n    def remove_elements(list1: List[int], list2: List[int]) -> List[int]:\n        return [i for i in list1 if i not in list2]"
-    },
-    {
-        "id":152,
-        "response":" from itertools import count\n\ndef sum_series(n):\n    return sum(count(1, 2), start=1)"
     },
     {
         "id":153,
@@ -1184,10 +1176,6 @@
         "response":" def max_sum_increasing_subseq(a, n, index, k):\n        dp = [[0] * n for _ in range(k + 1)]\n        for i in range(1, k + 1):\n            max_val = float('-inf')\n            for j in range(index, n):\n                max_val = max(max_val, dp[i - 1][j - 1] + a[j])\n                dp[i][j] = max_val\n        return dp[k][n - 1]"
     },
     {
-        "id":297,
-        "response":" from collections import deque\n\ndef colon_tuplex(tuplex, m, n):\n    q = deque(tuplex)\n    while q:\n        for _ in range(min(m, len(q))):\n            q.append(q.popleft())\n    return list(q)"
-    },
-    {
         "id":298,
         "response":" def large_product(nums1, nums2, N):\n        return max(nums1) * max(nums2)"
     },
@@ -1634,10 +1622,6 @@
     {
         "id":409,
         "response":" from math import sqrt\nfrom typing import List\n\ndef round_and_sum(lst: List[int]) -> int:\n    return sum(int(sqrt(n)) for n in lst)"
-    },
-    {
-        "id":410,
-        "response":" from itertools import count\nfrom typing import List\n\ndef cube_Sum(n: int) -> int:\n    cubes: List[int] = [i**3 for i in count(1, n)]\n    return sum(cubes)"
     },
     {
         "id":411,

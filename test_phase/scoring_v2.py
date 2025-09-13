@@ -90,6 +90,7 @@ counts = {
 total = len(df)
 
 for idx, r in df.iterrows():
+    print(idx)
     rid = str(r.get("id", ""))
     try:
         tests = parse_tests(r["test_list"])
