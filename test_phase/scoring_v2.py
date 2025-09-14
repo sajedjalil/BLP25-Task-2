@@ -4,7 +4,7 @@ from pathlib import Path
 
 # ---- paths (adjust if needed) ----
 CSV_PATH = Path("test_phase/data/test_v1.csv")
-SUB_PATH = Path("test_phase/plain/llama_3.2_3B_submission.json")
+SUB_PATH = Path("test_phase/english_translated/NLLB-200/gpt_oss_20B_submission.json")
 
 # ---- helpers (no intermediate prints/logs) ----
 def strip_code_fences(s: str) -> str:
@@ -88,9 +88,8 @@ counts = {
     "PARSE_FAIL": 0,
 }
 total = len(df)
-
 for idx, r in df.iterrows():
-    print(idx)
+    # print(idx)
     rid = str(r.get("id", ""))
     try:
         tests = parse_tests(r["test_list"])
@@ -100,6 +99,7 @@ for idx, r in df.iterrows():
 
     resp = id_to_resp.get(rid)
     if resp is None:
+        print(idx)
         counts["MISSING_CODE"] += 1
         continue
 
