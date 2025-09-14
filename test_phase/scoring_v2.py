@@ -4,7 +4,7 @@ from pathlib import Path
 
 # ---- paths (adjust if needed) ----
 CSV_PATH = Path("test_phase/data/test_v1.csv")
-SUB_PATH = Path("test_phase/code_interpret/plain/gpt_oss_20B_submission.json")
+SUB_PATH = Path("test_phase/english_translated/NLLB-200/claude_3.5_haiku_submission.json")
 
 # ---- helpers (no intermediate prints/logs) ----
 def strip_code_fences(s: str) -> str:
