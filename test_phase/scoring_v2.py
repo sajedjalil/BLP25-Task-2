@@ -3,8 +3,8 @@ import pandas as pd
 from pathlib import Path
 
 # ---- paths (adjust if needed) ----
-CSV_PATH = Path("dev_phase/data/dev.csv")
-SUB_PATH = Path("dev_phase/english_translated/NLLB-200/claude_3.5_haiku_submission.json")
+CSV_PATH = Path("test_phase/data/test_full.csv")
+SUB_PATH = Path("test_phase/english_translated/google/llama_4_maverick_17B_submission.json")
 
 # ---- helpers (no intermediate prints/logs) ----
 def strip_code_fences(s: str) -> str:
