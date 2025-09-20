@@ -1,0 +1,2002 @@
+[
+    {
+        "id":1,
+        "response":"def remove_Occ(s, ch):\n    if not s or not ch:\n        return s\n    first_occ = s.find(ch)\n    last_occ = s.rfind(ch)\n    if first_occ != -1 and last_occ != -1:\n        return s[:first_occ] + s[first_occ+1:last_occ] + s[last_occ+1:]\n    return s"
+    },
+    {
+        "id":2,
+        "response":"def sort_matrix(M):\n    return sorted(M, key=sum)"
+    },
+    {
+        "id":3,
+        "response":"from collections import Counter\nimport re\n\ndef count_common(words):\n    word_counts = Counter(word.lower() for word in words)\n    return word_counts.most_common(4)"
+    },
+    {
+        "id":4,
+        "response":"def find_Volume(l, b, h):\n    return 0.5 * l * b * h"
+    },
+    {
+        "id":5,
+        "response":"import re\ndef split_lowerstring(text):\n    result = re.sub(r'([A-Z])', r' \\1', text).lower().split()\n    return [i for i in result if i]"
+    },
+    {
+        "id":6,
+        "response":"import re\n\ndef text_lowercase_underscore(text):\n    if re.search(r'([a-z])\\1+', text) and '_' in text:\n        return 'Found a match!'\n    else:\n        return 'No match found'"
+    },
+    {
+        "id":7,
+        "response":"def square_perimeter(a: int) -> int:\n    return 4 * a"
+    },
+    {
+        "id":8,
+        "response":"def str_to_list(string, chars):\n    return ''.join([char for char in string if char not in chars])"
+    },
+    {
+        "id":9,
+        "response":"def test_duplicate(arraynums):\n    return len(arraynums) != len(set(arraynums))"
+    },
+    {
+        "id":10,
+        "response":"def is_woodall(n: int) -> bool:\n    x = 1\n    while True:\n        woodall_num = x * (2**x - 1)\n        if woodall_num == n:\n            return True\n        elif woodall_num > n:\n            return False\n        x += 1"
+    },
+    {
+        "id":11,
+        "response":"def multiples_of_num(m, n):\n    return [i * m for i in range(1, n+1) if i*m <= n*m]"
+    },
+    {
+        "id":12,
+        "response":"def find_first_duplicate(nums):\n    seen = set()\n    for num in nums:\n        if num in seen:\n            return num\n        seen.add(num)\n    return -1\n\nassert find_first_duplicate([1, 2, 3, 4, 4, 5]) == 4"
+    },
+    {
+        "id":13,
+        "response":"def maximum_Sum(list1):\n    return max(sum(sublist) for sublist in list1)"
+    },
+    {
+        "id":14,
+        "response":"def binary_to_decimal(binary):\n    binary_str = str(binary)\n    return int(binary_str, 2)"
+    },
+    {
+        "id":15,
+        "response":"from typing import List\nfrom collections import Counter\n\ndef find_Product(arr: List[int], n: int) -> int:\n    count = Counter(arr)\n    product = 1\n    for num in count:\n        if count[num] == 1:\n            product *= num\n    return product\n\nassert find_Product([1,1,2,3],4) == 6"
+    },
+    {
+        "id":16,
+        "response":"def check_k_elements(test_list, K):\n    return any(len(t) == K for t in test_list)"
+    },
+    {
+        "id":17,
+        "response":"import re\n\ndef remove(list):\n    return [re.sub('\\d', '', string) for string in list]"
+    },
+    {
+        "id":18,
+        "response":"import math\n\ndef binomial_Coeff(n, k):\n    if k > n - k:\n        k = n - k\n    coeff = 1\n    for i in range(k):\n        coeff = coeff * (n - i) \/\/ (i + 1)\n    return coeff\n\nassert binomial_Coeff(5,2) == 10"
+    },
+    {
+        "id":19,
+        "response":"from typing import List\n\ndef get_Odd_Occurrence(arr: List[int], arr_size: int) -> int:\n    count_dict = {}\n    for num in arr:\n        if num in count_dict:\n            count_dict[num] += 1\n        else:\n            count_dict[num] = 1\n    for num, count in count_dict.items():\n        if count % 2 != 0:\n            return num\n    return None\n\nassert get_Odd_Occurrence([1,2,3,1,2,3,1],7) == 1"
+    },
+    {
+        "id":20,
+        "response":"def check_Equality(s):\n    count = 0\n    for i in range(len(s)):\n        for j in range(i + 1, len(s) + 1):\n            substring = s[i:j]\n            if substring[0] == substring[-1]:\n                count += 1\n    return count"
+    },
+    {
+        "id":21,
+        "response":"import heapq\nfrom collections import Counter\nimport itertools\n\ndef func(lists, k):\n    flat_list = list(itertools.chain(*lists))\n    count = Counter(flat_list)\n    return heapq.nlargest(k, count, key=count.get)"
+    },
+    {
+        "id":22,
+        "response":"import math\n\ndef max_Prime_Factors(n):\n    i = 2\n    factors = []\n    while i * i <= n:\n        if n % i:\n            i += 1\n        else:\n            n \/\/= i\n            factors.append(i)\n    if n > 1:\n        factors.append(n)\n    return max(factors)"
+    },
+    {
+        "id":23,
+        "response":"def decimal_To_Binary(N):\n    return int(bin(N)[2:])"
+    },
+    {
+        "id":24,
+        "response":"def find_missing(ar, N):\n    total_sum = N * (N + 1) \/\/ 2\n    actual_sum = sum(ar)\n    return total_sum - actual_sum"
+    },
+    {
+        "id":25,
+        "response":"def find_rect_num(n):\n    return n * (n + 1)"
+    },
+    {
+        "id":26,
+        "response":"from decimal import Decimal, getcontext\n\ndef find_Nth_Digit(p, q, N):\n    getcontext().prec = N + 2\n    d = Decimal(p) \/ Decimal(q)\n    s = str(d)\n    s = s.replace('.', '')\n    if len(s) < N:\n        return -1\n    else:\n        return int(s[N])"
+    },
+    {
+        "id":27,
+        "response":"def sort_mixed_list(mixed_list):\n    ints = sorted([i for i in mixed_list if type(i) == int])\n    strs = sorted([i for i in mixed_list if type(i) == str])\n    return ints + strs"
+    },
+    {
+        "id":28,
+        "response":"def div_even_odd(list1):\n    even_sum = sum(num for num in list1 if num % 2 == 0)\n    odd_sum = sum(num for num in list1 if num % 2 != 0)\n    if even_sum == 0:\n        return float('inf')\n    return even_sum \/ odd_sum"
+    },
+    {
+        "id":29,
+        "response":"import collections\nimport heapq\n\ndef rearange_string(S):\n    char_freq = collections.Counter(S)\n    max_freq = max(char_freq.values())\n    if max_freq > (len(S) + 1) \/\/ 2:\n        return \"\"\n\n    max_heap = [(-freq, char) for char, freq in char_freq.items()]\n    heapq.heapify(max_heap)\n\n    result = []\n    while max_heap:\n        freq1, char1 = heapq.heappop(max_heap)\n        if result and result[-1] == char1:\n            if not max_heap:\n                return \"\"\n            freq2, char2 = heapq.heappop(max_heap)\n            result.append(char2)\n            if freq2 < -1:\n                heapq.heappush(max_heap, (freq2 + 1, char2))\n            heapq.heappush(max_heap, (freq1, char1))\n        else:\n            result.append(char1)\n            if freq1 < -1:\n                heapq.heappush(max_heap, (freq1 + 1, char1))\n\n    return \"\".join(result)\n\nassert rearange_string(\"aab\")=='aba'"
+    },
+    {
+        "id":30,
+        "response":"from collections import Counter\nimport itertools\n\ndef freq_element(nums):\n    flat_list = list(itertools.chain(*nums))\n    return dict(Counter(flat_list))"
+    },
+    {
+        "id":31,
+        "response":"from typing import List\n\ndef filter_evennumbers(nums: List[int]) -> List[int]:\n    even_filter = lambda x: x % 2 == 0\n    return list(filter(even_filter, nums))"
+    },
+    {
+        "id":32,
+        "response":"from typing import List\nfrom collections import Counter\n\ndef find_Sum(arr: List[int], n: int) -> int:\n    count = Counter(arr)\n    return sum(num for num, freq in count.items() if freq > 1)"
+    },
+    {
+        "id":33,
+        "response":"import re\n\ndef text_match(text):\n    pattern = r'[a-z]+_[a-z]+'\n    if re.search(pattern, text):\n        return 'Found a match!'\n    else:\n        return 'Not a match!'"
+    },
+    {
+        "id":34,
+        "response":"import re\n\ndef text_match_string(text):\n    pattern = r\"^python\"\n    if re.search(pattern, text, re.IGNORECASE):\n        return text\n    else:\n        return 'Not matched!'"
+    },
+    {
+        "id":35,
+        "response":"import math\n\ndef find_gcd(arr):\n    result = arr[0]\n    for num in arr[1:]:\n        result = math.gcd(result, num)\n    return result\n\nassert find_gcd([2, 4, 6, 8, 16]) == 2"
+    },
+    {
+        "id":36,
+        "response":"def test_distinct(data):\n    return len(data) == len(set(data))"
+    },
+    {
+        "id":37,
+        "response":"import math\n\ndef compute_Last_Digit(A,B):\n    if B > A:\n        return 0\n    else:\n        A_factorial = 1\n        B_factorial = 1\n        for i in range(1, A+1):\n            A_factorial *= i\n        for i in range(1, B+1):\n            B_factorial *= i\n        return (A_factorial \/\/ B_factorial) % 10\n\nassert compute_Last_Digit(2,4) == 0\nassert compute_Last_Digit(5,3) == 2\nassert compute_Last_Digit(7,4) == 4\nassert compute_Last_Digit(2,4) == 0"
+    },
+    {
+        "id":38,
+        "response":"def odd_bit_set_number(n):\n    i = 1\n    while i <= n.bit_length():\n        if i & n == 0 and i % 2 != 0:\n            n |= i\n        i <<= 1\n    return n"
+    },
+    {
+        "id":39,
+        "response":"def specified_element(nums, N):\n    return [sublist[N] for sublist in nums]"
+    },
+    {
+        "id":40,
+        "response":"from typing import List, Tuple\n\ndef min_length_list(input_list: List[List[int]]) -> Tuple[int, List[int]]:\n    min_len = min(len(sublist) for sublist in input_list)\n    min_lists = [sublist for sublist in input_list if len(sublist) == min_len]\n    return min_len, min_lists[0]\n\nassert min_length_list([[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]])==(1, [0])"
+    },
+    {
+        "id":41,
+        "response":"def check_equilateral(x, y, z):\n    return x == y == z"
+    },
+    {
+        "id":42,
+        "response":"def parallelogram_area(b, h):\n    return b * h"
+    },
+    {
+        "id":43,
+        "response":"def check_Equality(s):\n    if not s:\n        return \"Invalid string\"\n    if s[0] == s[-1]:\n        return \"Equal\"\n    else:\n        return \"Not Equal\""
+    },
+    {
+        "id":44,
+        "response":"def counting_sort(my_list):\n    if not my_list:\n        return my_list\n\n    min_val = min(my_list)\n    max_val = max(my_list)\n    count = [0] * (max_val - min_val + 1)\n    output = [0] * len(my_list)\n\n    for num in my_list:\n        count[num - min_val] += 1\n\n    for i in range(1, len(count)):\n        count[i] += count[i - 1]\n\n    for num in my_list:\n        output[count[num - min_val] - 1] = num\n        count[num - min_val] -= 1\n\n    return output"
+    },
+    {
+        "id":45,
+        "response":"def tn_gp(a, n, r):\n    return a * (r ** (n - 1))"
+    },
+    {
+        "id":46,
+        "response":"def rev(num):\n    reversed_num = int(str(abs(num))[::-1])\n    if num < 0:\n        reversed_num = -reversed_num\n    return num == 2 * reversed_num - 1"
+    },
+    {
+        "id":47,
+        "response":"def find_Max_Num(arr, n):\n    arr.sort(reverse=True)\n    return int(''.join(map(str, arr)))"
+    },
+    {
+        "id":48,
+        "response":"def opposite_Signs(x, y):\n    return (x * y) < 0"
+    },
+    {
+        "id":49,
+        "response":"import math\n\ndef is_octagonal(n):\n    return n * (3 * n - 2)"
+    },
+    {
+        "id":50,
+        "response":"from typing import List\n\ndef max_len_sub(arr: List[int], n: int) -> int:\n    if n == 1:\n        return 1\n    \n    max_len = 1\n    curr_len = 1\n    \n    for i in range(1, n):\n        if abs(arr[i] - arr[i - 1]) == 1:\n            curr_len += 1\n        else:\n            max_len = max(max_len, curr_len)\n            curr_len = 1\n    \n    return max(max_len, curr_len)\n\nassert max_len_sub([2, 5, 6, 3, 7, 6, 5, 8], 8) == 5"
+    },
+    {
+        "id":51,
+        "response":"import re\ndef count_Substrings(s,n):\n    return len(re.findall(f'(?=(\\\\d{{{n}}})).*', s))"
+    },
+    {
+        "id":52,
+        "response":"def smallest_num(xs):\n    return min(xs)"
+    },
+    {
+        "id":53,
+        "response":"def max_difference(test_list):\n    return max(abs(y - x) for x, y in test_list)"
+    },
+    {
+        "id":54,
+        "response":"def subject_marks(subjectmarks):\n    return sorted(subjectmarks, key=lambda x: x[1])"
+    },
+    {
+        "id":55,
+        "response":"def recursive_list_sum(data_list):\n    total = 0\n    for item in data_list:\n        if isinstance(item, list):\n            total += recursive_list_sum(item)\n        else:\n            total += item\n    return total"
+    },
+    {
+        "id":56,
+        "response":"def pos_count(lst):\n    return sum(1 for x in lst if x > 0)"
+    },
+    {
+        "id":57,
+        "response":"def bell_number(n):\n    bell = [[0 for _ in range(n + 1)] for _ in range(n + 1)]\n    bell[0][0] = 1\n    for i in range(1, n + 1):\n        bell[i][0] = bell[i-1][i-1]\n        for j in range(1, i + 1):\n            bell[i][j] = bell[i][j-1] + bell[i-1][j-1]\n    return bell[n][0]"
+    },
+    {
+        "id":58,
+        "response":"def is_Monotonic(A):\n    increasing = decreasing = True\n\n    for i in range(len(A) - 1):\n        if A[i] > A[i + 1]:\n            increasing = False\n        if A[i] < A[i + 1]:\n            decreasing = False\n\n    return increasing or decreasing"
+    },
+    {
+        "id":59,
+        "response":"from typing import List\n\ndef is_sublist(lst: List[int], sub: List[int]) -> bool:\n    if not sub:\n        return True\n    if len(sub) > len(lst):\n        return False\n    for i in range(len(lst) - len(sub) + 1):\n        if lst[i:i+len(sub)] == sub:\n            return True\n    return False"
+    },
+    {
+        "id":60,
+        "response":"def find_equal_tuple(Input, k):\n    if all(len(t) == k for t in Input):\n        return 'All tuples have same length'\n    else:\n        return 'Tuples have different lengths'"
+    },
+    {
+        "id":61,
+        "response":"import math\n\ndef comb_sort(nums):\n    def get_next_gap(g):\n        g = (g * 10) \/\/ 13\n        if g < 1:\n            return 1\n        return g\n\n    n = len(nums)\n    gap = n\n    swapped = True\n\n    while gap != 1 or swapped:\n        gap = get_next_gap(gap)\n        swapped = False\n\n        for i in range(0, n - gap):\n            j = i + gap\n            if nums[i] > nums[j]:\n                nums[i], nums[j] = nums[j], nums[i]\n                swapped = True\n    return nums\n\nassert comb_sort([5, 15, 37, 25, 79]) == [5, 15, 25, 37, 79]"
+    },
+    {
+        "id":62,
+        "response":"def dif_Square(n):\n    for i in range(int(n**0.5) + 1):\n        if (n + i * i) ** 0.5 == int((n + i * i) ** 0.5):\n            return True\n    return False"
+    },
+    {
+        "id":63,
+        "response":"import re\ndef multiple_split(text):\n    return re.split(r'[\\n*]', text)"
+    },
+    {
+        "id":64,
+        "response":"from typing import List\n\ndef is_samepatterns(colors: List[str], patterns: List[str]) -> bool:\n    color_map = {}\n    pattern_map = {}\n\n    for color, pattern in zip(colors, patterns):\n        if color not in color_map:\n            color_map[color] = pattern\n        if pattern not in pattern_map:\n            pattern_map[pattern] = color\n\n        if color_map[color] != pattern or pattern_map[pattern] != color:\n            return False\n\n    return True"
+    },
+    {
+        "id":65,
+        "response":"import re\ndef find_tuples(test_list, K):\n    result = [tup for tup in test_list if all(i % K == 0 for i in tup)]\n    return str(result)"
+    },
+    {
+        "id":66,
+        "response":"def count_Squares(m,n):\n    total = 0\n    for i in range(1, m+1):\n        for j in range(1, n+1):\n            total += min(m-i+1, n-j+1)\n    return total"
+    },
+    {
+        "id":67,
+        "response":"def is_Diff(n):\n    even_sum = 0\n    odd_sum = 0\n    for digit in str(n):\n        digit = int(digit)\n        if digit % 2 == 0:\n            even_sum += digit\n        else:\n            odd_sum += digit\n    return abs(even_sum - odd_sum) != 0"
+    },
+    {
+        "id":68,
+        "response":"def count_With_Odd_SetBits(n):\n    count = 0\n    for i in range(1, n+1):\n        if bin(i).count('1') % 2 != 0:\n            count += 1\n    return count"
+    },
+    {
+        "id":69,
+        "response":"def word_len(s):\n    return len(s) % 2 != 0"
+    },
+    {
+        "id":70,
+        "response":"def tetrahedral_number(n):\n    return (n * (n + 1) * (n + 2)) \/ 6"
+    },
+    {
+        "id":71,
+        "response":"from itertools import zip_longest\n\ndef zip_tuples(test_tup1, test_tup2):\n    return [(a, b) for a, b in zip_longest(test_tup1, test_tup2, fillvalue=None) if a is not None or b is not None]"
+    },
+    {
+        "id":72,
+        "response":"import math\n\ndef volume_sphere(r):\n    return (4\/3) * math.pi * (r ** 3)"
+    },
+    {
+        "id":73,
+        "response":"def get_Char(strr):\n    import string\n    sum = 0\n    for char in strr:\n        sum += string.ascii_lowercase.index(char) + 1\n    result = (sum - 1) % 26 + 1\n    return string.ascii_lowercase[result - 1]"
+    },
+    {
+        "id":74,
+        "response":"def sequence(n):\n    if n <= 2:\n        return 2 if n == 2 else 1\n    else:\n        a, b = 1, 2\n        for _ in range(2, n):\n            a, b = b, a + b \n        return b"
+    },
+    {
+        "id":75,
+        "response":"import math\n\ndef surfacearea_sphere(r):\n    return 4 * math.pi * (r ** 2)"
+    },
+    {
+        "id":76,
+        "response":"def centered_hexagonal_number(n: int) -> int:\n    return 3 * n * n - 3 * n + 1"
+    },
+    {
+        "id":77,
+        "response":"def merge_dictionaries_three(dict1, dict2, dict3):\n    return {**dict1, **dict2, **dict3}"
+    },
+    {
+        "id":78,
+        "response":"from typing import Dict\n\ndef freq_count(list1: list) -> Dict:\n    freq_dict = {}\n    for item in list1:\n        if item in freq_dict:\n            freq_dict[item] += 1\n        else:\n            freq_dict[item] = 1\n    return freq_dict"
+    },
+    {
+        "id":79,
+        "response":"def closest_num(N):\n    return N - 1 if N > 0 else 0"
+    },
+    {
+        "id":80,
+        "response":"def len_log(list1):\n    return max(len(word) for word in list1)"
+    },
+    {
+        "id":81,
+        "response":"def find_substring(str_list, sub_str):\n    for str1 in str_list:\n        if sub_str in str1:\n            return True\n    return False"
+    },
+    {
+        "id":82,
+        "response":"def is_undulating(n):\n    n = str(n)\n    for i in range(1, len(n) - 1):\n        if (int(n[i-1]) < int(n[i]) and int(n[i]) > int(n[i+1])) or (int(n[i-1]) > int(n[i]) and int(n[i]) < int(n[i+1])):\n            continue\n        else:\n            return False\n    return True"
+    },
+    {
+        "id":83,
+        "response":"def power(a, b):\n    return a ** b"
+    },
+    {
+        "id":84,
+        "response":"def index_minimum(test_list):\n    return min(test_list, key=lambda x: x[1])[0]"
+    },
+    {
+        "id":85,
+        "response":"import typing\n\ndef Find_Min_Length(lst: typing.List[typing.List[int]]) -> int:\n    return min(len(sublist) for sublist in lst)"
+    },
+    {
+        "id":86,
+        "response":"def divisor(n):\n    count = 0\n    for i in range(1, n + 1):\n        if n % i == 0:\n            count += 1\n    return count"
+    },
+    {
+        "id":87,
+        "response":"from typing import List, Dict\nfrom collections import defaultdict\n\ndef frequency_lists(list1: List[List[int]]) -> Dict[int, int]:\n    freq_dict = defaultdict(int)\n    for sub_list in list1:\n        for num in sub_list:\n            freq_dict[num] += 1\n    return dict(freq_dict)"
+    },
+    {
+        "id":88,
+        "response":"import math\nimport operator\nimport functools\n\ndef multiply_num(numbers):\n    product = functools.reduce(operator.mul, numbers, 1)\n    return product \/ len(numbers)"
+    },
+    {
+        "id":89,
+        "response":"def decimal_to_binary(n):\n    if n == 0:\n        return '0'\n    result = ''\n    while n > 0:\n        result = str(n % 2) + result\n        n = n \/\/ 2\n    return result"
+    },
+    {
+        "id":90,
+        "response":"def next_smallest_palindrome(num):\n    num += 1\n    while not is_palindrome(num):\n        num += 1\n    return num\n\ndef is_palindrome(num):\n    return str(num) == str(num)[::-1]"
+    },
+    {
+        "id":91,
+        "response":"def kth_element(arr, n, k):\n    if k < 1 or k > n:\n        return None\n    arr.sort()\n    return arr[k-1]"
+    },
+    {
+        "id":92,
+        "response":"def snake_to_camel(word):\n    components = word.split('_')\n    return ''.join(x.capitalize() for x in components)"
+    },
+    {
+        "id":93,
+        "response":"import math\nfrom functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef eulerian_num(n, m):\n    if m == 0:\n        return 1 if n == 0 else 0\n    if n == 0 or n < m:\n        return 0\n    return (n - m) * eulerian_num(n - 1, m) + (m + 1) * eulerian_num(n - 1, m - 1)\n\nassert eulerian_num(3, 1) == 4"
+    },
+    {
+        "id":94,
+        "response":"def sort_sublists(input_list):\n    return list(map(lambda x: sorted(x), input_list))"
+    },
+    {
+        "id":95,
+        "response":"def count(lst):\n    return sum(1 for elem in lst if elem)"
+    },
+    {
+        "id":96,
+        "response":"def add_lists(test_list, test_tup):\n    return test_tup + tuple(test_list)"
+    },
+    {
+        "id":97,
+        "response":"def count_Hexadecimal(L,R) :\n    count = 0\n    for i in range(L, R+1):\n        try:\n            hex(int(i))\n            count += 1\n        except ValueError:\n            pass\n    return count"
+    },
+    {
+        "id":98,
+        "response":"import heapq\nfrom typing import List\n\ndef merge_sorted_list(*args: List[int]) -> List[int]:\n    return list(heapq.merge(*args))\n\nassert merge_sorted_list([25, 24, 15, 4, 5, 29, 110],[19, 20, 11, 56, 25, 233, 154],[24, 26, 54, 48])==[4, 5, 11, 15, 19, 20, 24, 24, 25, 25, 26, 29, 48, 54, 56, 110, 154, 233]"
+    },
+    {
+        "id":99,
+        "response":"def odd_Equivalent(s, n):\n    s = s[:n]\n    n = len(s)\n    min_rotations = float('inf')\n    for i in range(n):\n        odd_ones = sum(1 for j in range(n) if s[(i + j) % n] == '1' and j % 2 != 0)\n        even_ones = sum(1 for j in range(n) if s[(i + j) % n] == '1' and j % 2 == 0)\n        min_rotations = min(min_rotations, abs(odd_ones - even_ones))\n    return min_rotations"
+    },
+    {
+        "id":100,
+        "response":"def extract_missing(test_list, strt_val, stop_val):\n    if not test_list:\n        return [(strt_val, stop_val)]\n    \n    test_list.sort(key=lambda x: x[0])\n    missing_ranges = []\n    \n    if test_list[0][0] > strt_val:\n        missing_ranges.append((strt_val, test_list[0][0] - 1))\n        \n    for i in range(len(test_list) - 1):\n        if test_list[i][1] + 1 < test_list[i+1][0]:\n            missing_ranges.append((test_list[i][1] + 1, test_list[i+1][0] - 1))\n            \n    if test_list[-1][1] < stop_val:\n        missing_ranges.append((test_list[-1][1] + 1, stop_val))\n        \n    result = []\n    for r in missing_ranges:\n        if r[0] <= r[1]:\n            result.append(r)\n            \n    result.sort()\n    final_result = []\n    for r in test_list:\n        if r[0] > strt_val:\n            final_result.append((strt_val, r[0] - 1))\n        if r[1] < stop_val:\n            final_result.append((r[1] + 1, stop_val))\n    final_result.extend(result)\n    final_result.sort()\n    merged_result = [final_result[0]]\n    for current in final_result[1:]:\n        last = merged_result[-1]\n        if current[0] <= last[1]:\n            merged_result[-1] = (last[0], max(last[1], current[1]))\n        else:\n            merged_result.append(current)\n    return merged_result"
+    },
+    {
+        "id":101,
+        "response":"from typing import List\n\ndef common_in_nested_lists(nestedlist: List[List[int]]) -> List[int]:\n    common_elements = set(nestedlist[0])\n    for lst in nestedlist[1:]:\n        common_elements &= set(lst)\n    return sorted(list(common_elements), reverse=True)\n\nassert common_in_nested_lists([[12, 18, 23, 25, 45], [7, 12, 18, 24, 28], [1, 5, 8, 12, 15, 16, 18]]) == [18, 12]"
+    },
+    {
+        "id":102,
+        "response":"import math\n\ndef perimeter(diameter, height):\n    return math.pi * diameter + 2 * height"
+    },
+    {
+        "id":103,
+        "response":"def check_integer(text):\n    try:\n        int(text)\n        return True\n    except ValueError:\n        return False"
+    },
+    {
+        "id":104,
+        "response":"from collections import Counter\n\ndef assign_freq(test_list):\n    freq = Counter(map(repr, test_list))\n    return str([tuple(list(eval(t)) + [freq[t]]) for t in freq])"
+    },
+    {
+        "id":105,
+        "response":"def empty_dit(list1):\n    return all(not d for d in list1)"
+    },
+    {
+        "id":106,
+        "response":"def tuple_to_int(nums):\n    return int(''.join(map(str, nums)))"
+    },
+    {
+        "id":107,
+        "response":"def list_to_float(test_list):\n    import ast\n    return str([tuple(map(lambda x: float(x) if isinstance(x, str) and x.replace('.', '', 1).replace('-', '', 1).isdigit() else x, i)) for i in test_list])"
+    },
+    {
+        "id":108,
+        "response":"def string_to_list(string):\n    return string.split()"
+    },
+    {
+        "id":109,
+        "response":"from collections import Counter\n\ndef search(arr, n):\n    count = Counter(arr)\n    for num in arr:\n        if count[num] == 1:\n            return num\n    return None\n\nassert search([1,1,2,2,3],5) == 3"
+    },
+    {
+        "id":110,
+        "response":"def max_product_tuple(list1):\n    return max(a * b for a, b in list1)"
+    },
+    {
+        "id":111,
+        "response":"def check_triplet(A, n, sum, count):\n    A.sort()\n    for i in range(n - 2):\n        left = i + 1\n        right = n - 1\n        while left < right:\n            current_sum = A[i] + A[left] + A[right]\n            if current_sum == sum:\n                count += 1\n                left += 1\n                right -= 1\n            elif current_sum < sum:\n                left += 1\n            else:\n                right -= 1\n    return count > 0"
+    },
+    {
+        "id":112,
+        "response":"import math\n\ndef smartNumber(n):\n    i = 1\n    count = 0\n    while True:\n        num = i * i\n        sqrt_num = math.sqrt(num)\n        if sqrt_num == int(sqrt_num):\n            count += 1\n            if count == n:\n                return num * 30\n        i += 1\n\nassert smartNumber(1) == 30\nassert smartNumber(2) == 120\nassert smartNumber(3) == 270\nassert smartNumber(4) == 480\nassert smartNumber(5) == 750\nassert smartNumber(6) == 1080"
+    },
+    {
+        "id":113,
+        "response":"def amicable_numbers_sum(limit):\n    def sum_of_divisors(n):\n        return sum(i for i in range(1, n) if n % i == 0)\n\n    amicable_numbers = set()\n    for a in range(1, limit):\n        b = sum_of_divisors(a)\n        if a != b and b < limit and sum_of_divisors(b) == a:\n            amicable_numbers.add(a)\n            amicable_numbers.add(b)\n\n    return sum(amicable_numbers)"
+    },
+    {
+        "id":114,
+        "response":"import cmath\nimport math\n\ndef angle_complex(a, b):\n    if isinstance(b, complex):\n        if a != 0:\n            raise ValueError(\"The input should be a single complex number or two real numbers\")\n        return cmath.phase(b)\n    else:\n        z = complex(a, b)\n        return cmath.phase(z)\n\nassert angle_complex(0,1)==1.5707963267948966\nassert angle_complex(0,1j)==1.5707963267948966"
+    },
+    {
+        "id":115,
+        "response":"def find_length(string: str, n: int) -> int:\n    max_len = 0\n    count = [0] * (2 * n + 1)\n    count[n] = 1\n    sum = n\n    max_diff = 0\n    curr_max = n\n    curr_min = n\n    for char in string:\n        if char == '0':\n            sum -= 1\n        else:\n            sum += 1\n        curr_max = max(curr_max, sum)\n        curr_min = min(curr_min, sum)\n        max_diff = max(max_diff, curr_max - curr_min)\n    return max_diff\n\nassert find_length(\"11000010001\", 11) == 6"
+    },
+    {
+        "id":116,
+        "response":"import math\n\ndef sum(a, b):\n    def gcd(a, b):\n        while b:\n            a, b = b, a % b\n        return a\n\n    common_divisor_sum = 0\n    for i in range(1, min(a, b) + 1):\n        if a % i == 0 and b % i == 0:\n            common_divisor_sum += i\n    return common_divisor_sum\n\nassert sum(10,15) == 6"
+    },
+    {
+        "id":117,
+        "response":"def multiply_int(x, y):\n    result = 0\n    for _ in range(abs(y)):\n        result += abs(x)\n    if (x < 0 and y < 0) or (x > 0 and y > 0):\n        return result\n    else:\n        return -result"
+    },
+    {
+        "id":118,
+        "response":"def long_words(n, str):\n    words = str.split()\n    return [word for word in words if len(word) > n]"
+    },
+    {
+        "id":119,
+        "response":"def magic_square_test(my_matrix):\n    size = len(my_matrix)\n    expected_sum = sum(my_matrix[0])\n\n    # Check rows\n    for row in my_matrix:\n        if sum(row) != expected_sum:\n            return False\n\n    # Check columns\n    for col in range(size):\n        if sum(my_matrix[row][col] for row in range(size)) != expected_sum:\n            return False\n\n    # Check diagonals\n    diagonal1 = sum(my_matrix[i][i] for i in range(size))\n    diagonal2 = sum(my_matrix[i][size - i - 1] for i in range(size))\n    if diagonal1 != expected_sum or diagonal2 != expected_sum:\n        return False\n\n    # Check if all numbers are unique and in range\n    flat_list = [num for row in my_matrix for num in row]\n    if len(flat_list) != len(set(flat_list)) or min(flat_list) < 1 or max(flat_list) > size * size:\n        return False\n\n    return True"
+    },
+    {
+        "id":120,
+        "response":"from collections import Counter\nfrom typing import Tuple\n\ndef max_occurrences(nums: list) -> Tuple:\n    count = Counter(nums)\n    max_count = max(count.values())\n    max_items = [item for item, freq in count.items() if freq == max_count]\n    return min(max_items), max_count"
+    },
+    {
+        "id":121,
+        "response":"def reverse_vowels(str1):\n    vowels = 'aeiouAEIOU'\n    str1 = list(str1)\n    left, right = 0, len(str1) - 1\n    while left < right:\n        if str1[left] not in vowels:\n            left += 1\n        elif str1[right] not in vowels:\n            right -= 1\n        else:\n            str1[left], str1[right] = str1[right], str1[left]\n            left, right = left + 1, right - 1\n    return ''.join(str1)"
+    },
+    {
+        "id":122,
+        "response":"def tup_string(tup1):\n    return \"\".join(tup1)"
+    },
+    {
+        "id":123,
+        "response":"from typing import List\n\ndef sum_negativenum(nums: List[int]) -> int:\n    return sum(filter(lambda x: x < 0, nums))"
+    },
+    {
+        "id":124,
+        "response":"def check_last(arr, n, p):\n    last_element = arr[-1]\n    for _ in range(p):\n        last_element = last_element ** 2\n    if last_element % 2 == 0:\n        return \"EVEN\"\n    else:\n        return \"ODD\""
+    },
+    {
+        "id":125,
+        "response":"def hexagonal_num(n):\n    return n * (2 * n - 1)"
+    },
+    {
+        "id":126,
+        "response":"def cal_electbill(units):\n    if units <= 100:\n        return units * 2.10 + 100\n    elif units <= 200:\n        return 100 * 2.10 + 100 + (units - 100) * 3.45\n    elif units <= 300:\n        return 100 * 2.10 + 100 + 100 * 3.45 + (units - 200) * 4.10\n    elif units <= 400:\n        return 100 * 2.10 + 100 + 100 * 3.45 + 100 * 4.10 + (units - 300) * 4.70\n    else:\n        return 100 * 2.10 + 100 + 100 * 3.45 + 100 * 4.10 + 100 * 4.70 + (units - 400) * 5.20"
+    },
+    {
+        "id":127,
+        "response":"def zero_count(nums):\n    if not nums:\n        return 0\n    return round(nums.count(0) \/ len(nums), 2)"
+    },
+    {
+        "id":128,
+        "response":"def is_Sum_Of_Powers_Of_Two(n: int) -> bool:\n    if n <= 0:\n        return False\n    while n:\n        if n % 2 == 1:\n            return True\n        n = n \/\/ 2\n    return False\n\ndef is_Sum_Of_Powers_Of_Two_optimized(n: int) -> bool:\n    if n <= 0:\n        return False\n    count = 0\n    while n:\n        count += n & 1\n        n >>= 1\n    return count == 1\n\ndef is_Sum_Of_Powers_Of_Two_bit_manipulation(n: int) -> bool:\n    if n <= 0:\n        return False\n    return bin(n).count('1') == 1"
+    },
+    {
+        "id":129,
+        "response":"import math\n\ndef circle_circumference(r):\n    return round(2 * math.pi * r, 5)"
+    },
+    {
+        "id":130,
+        "response":"from typing import List, Tuple\nfrom collections import Counter\n\ndef extract_singly(test_list: List[Tuple[int, ...]]) -> List[int]:\n    flat_list = [item for tup in test_list for item in tup]\n    count = Counter(flat_list)\n    return [item for item, freq in count.items() if freq == 1]"
+    },
+    {
+        "id":131,
+        "response":"def pancake_sort(nums):\n    def flip(nums, k):\n        return nums[:k+1][::-1] + nums[k+1:]\n\n    n = len(nums)\n    while n > 1:\n        max_index = nums.index(max(nums[:n]))\n        if max_index == n - 1:\n            n -= 1\n            continue\n        if max_index != 0:\n            nums = flip(nums, max_index)\n        nums = flip(nums, n - 1)\n        n -= 1\n    return nums\n\nassert pancake_sort([15, 79, 25, 38, 69]) == [15, 25, 38, 69, 79]"
+    },
+    {
+        "id":132,
+        "response":"from typing import List\nfrom collections import Counter\n\ndef count_samepair(list1: List[int], list2: List[int], list3: List[int]) -> int:\n    count1 = Counter(list1)\n    count2 = Counter(list2)\n    count3 = Counter(list3)\n    common = count1.keys() & count2.keys() & count3.keys()\n    return sum(min(count1[c], count2[c], count3[c]) for c in common)"
+    },
+    {
+        "id":133,
+        "response":"def find_lists(Input):\n    return sum(isinstance(i, list) for i in Input)"
+    },
+    {
+        "id":134,
+        "response":"import itertools\n\ndef sum_Pairs(arr, n):\n    return sum(abs(a - b) for a, b in itertools.combinations(arr, 2))"
+    },
+    {
+        "id":135,
+        "response":"def max_Abs_Diff(arr,n):\n    return max(arr) - min(arr)"
+    },
+    {
+        "id":136,
+        "response":"def ascii_value_string(str1):\n    return sum(ord(char) for char in str1)"
+    },
+    {
+        "id":137,
+        "response":"def max_path_sum(tri, m, n):\n    for i in range(m - 2, -1, -1):\n        for j in range(i + 1):\n            tri[i][j] += max(tri[i + 1][j], tri[i + 1][j + 1])\n    return tri[0][0]"
+    },
+    {
+        "id":138,
+        "response":"def sum_digits_single(x) :\n    digits = [int(d) for d in str(x)]\n    n = len(digits)\n    max_sum = 0\n    for i in range(n-1):\n        sum1 = sum(digits[:i+1])\n        sum2 = sum(digits[i+1:])\n        current_sum = sum1 + sum2\n        max_sum = max(max_sum, current_sum)\n    current_sum = sum(digits)\n    return max(max_sum, current_sum)"
+    },
+    {
+        "id":139,
+        "response":"def longest_subseq_with_diff_one(arr, n):\n    if n == 0:\n        return 0\n    \n    max_length = 1\n    current_length = 1\n    \n    for i in range(1, n):\n        if abs(arr[i] - arr[i-1]) == 1:\n            current_length += 1\n        else:\n            max_length = max(max_length, current_length)\n            current_length = 1\n    \n    return max(max_length, current_length)"
+    },
+    {
+        "id":140,
+        "response":"import math\n\ndef does_Contain_B(a, b, c):\n    if a == 0:\n        return b != 0 and c % b == 0 and c \/\/ b >= 0\n    discriminant = b**2 - 4*a*c\n    if discriminant < 0:\n        return False\n    else:\n        root1 = (-b + math.sqrt(discriminant)) \/ (2*a)\n        root2 = (-b - math.sqrt(discriminant)) \/ (2*a)\n        return (root1 == int(root1) and root1 >= 0) or (root2 == int(root2) and root2 >= 0)"
+    },
+    {
+        "id":141,
+        "response":"import math\n\ndef gcd(p,q):\n    if math.gcd(p,q) == 1:\n        return True\n    else:\n        return False"
+    },
+    {
+        "id":142,
+        "response":"def merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) \/\/ 2\n    left_half = arr[:mid]\n    right_half = arr[mid:]\n    return merge(merge_sort(left_half), merge_sort(right_half))\n\ndef merge(a, b):\n    merged = []\n    i = j = 0\n    while i < len(a) and j < len(b):\n        if a[i] < b[j]:\n            merged.append(a[i])\n            i += 1\n        else:\n            merged.append(b[j])\n            j += 1\n    merged += a[i:]\n    merged += b[j:]\n    return merged\n\ndef main(arr):\n    return merge_sort(arr)\n\nassert main([3, 4, 2, 6, 5, 7, 1, 9]) == [1, 2, 3, 4, 5, 6, 7, 9]"
+    },
+    {
+        "id":143,
+        "response":"import typing\n\ndef parabola_vertex(a: float, b: float, c: float) -> typing.Tuple[float, float]:\n    x = -b \/ (2 * a)\n    y = a * x**2 + b * x + c\n    return (x, y)"
+    },
+    {
+        "id":144,
+        "response":"def specified_element(nums, N):\n    return [sublist[N] for sublist in nums]"
+    },
+    {
+        "id":145,
+        "response":"def even_bit_toggle_number(n) :\n    i = 0\n    result = 0\n    while n :\n        bit = n & 1\n        if i % 2 == 1:\n            result |= ((~bit) & 1) << i\n        else:\n            result |= bit << i\n        n >>= 1\n        i += 1\n    return result"
+    },
+    {
+        "id":146,
+        "response":"def tuple_int_str(tuple_str):\n    return tuple(tuple(int(i) for i in t) for t in tuple_str)"
+    },
+    {
+        "id":147,
+        "response":"import itertools\n\ndef encode_list(list1):\n    result = []\n    for key, group in itertools.groupby(list1):\n        count = len(list(group))\n        result.append([count, key])\n    return result"
+    },
+    {
+        "id":148,
+        "response":"import math\ndef min_Ops(arr,n,k):\n    median = sorted(arr)[n\/\/2]\n    ops = 0\n    for num in arr:\n        ops += abs(num - median)\n    return max(0, ops - k)"
+    },
+    {
+        "id":149,
+        "response":"def month_season(month, days):\n    winter = ['December', 'January', 'February']\n    spring = ['March', 'April', 'May']\n    summer = ['June', 'July', 'August']\n    autumn = ['September', 'October', 'November']\n\n    if month in winter:\n        return 'winter'\n    elif month in spring:\n        return 'spring'\n    elif month in summer:\n        return 'summer'\n    elif month in autumn:\n        return 'autumn'\n    else:\n        return 'Invalid month'"
+    },
+    {
+        "id":150,
+        "response":"import math\n\ndef solution(a, b, n):\n    for x in range(n \/\/ a + 1):\n        y = (n - a * x) \/ b\n        if y >= 0 and y == int(y):\n            return ('x = ', x, ', y = ', int(y))\n    return None"
+    },
+    {
+        "id":151,
+        "response":"def remove_elements(list1, list2):\n    return [i for i in list1 if i not in list2]"
+    },
+    {
+        "id":152,
+        "response":"def sum_series(n):\n    total = 0\n    i = 0\n    while n - i >= 0:\n        total += n - i\n        i += 2\n    return total"
+    },
+    {
+        "id":153,
+        "response":"import math\n\ndef area_polygon(s, l):\n    n = s\n    area = (n * l ** 2) \/ (4 * math.tan(math.pi \/ n))\n    return area"
+    },
+    {
+        "id":154,
+        "response":"import math\n\ndef divSum(n, m):\n    def sum_divisors(num):\n        sum = 0\n        for i in range(1, int(math.sqrt(num)) + 1):\n            if num % i == 0:\n                if num \/\/ i == i:\n                    sum += i\n                else:\n                    sum += i\n                    sum += num \/\/ i\n        return sum - num\n\n    return sum_divisors(n) == sum_divisors(m)"
+    },
+    {
+        "id":155,
+        "response":"import string\n\ndef count_char_position(str1):\n    alphabet = string.ascii_lowercase\n    count = 0\n    for char in str1:\n        if char.isalpha():\n            if alphabet.index(char.lower()) + 1 == ord(char.lower()) - 96:\n                count += 1\n    return count"
+    },
+    {
+        "id":156,
+        "response":"from typing import List\n\ndef find_even_Pair(A: List[int], N: int) -> int:\n    count = 0\n    for i in range(N):\n        for j in range(i + 1, N):\n            if (A[i] ^ A[j]) % 2 == 0 and A[i] != A[j]:\n                count += 1\n    return count"
+    },
+    {
+        "id":157,
+        "response":"import math\n\ndef next_Power_Of_2(n):\n    if n == 0:\n        return 1\n    return 2 ** math.ceil(math.log2(n))"
+    },
+    {
+        "id":158,
+        "response":"def frequency(a, x):\n    return a.count(x)"
+    },
+    {
+        "id":159,
+        "response":"def get_pell(n):\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, 2 * b + a\n    return b"
+    },
+    {
+        "id":160,
+        "response":"def sum_range_list(list1, m, n):\n    return sum(list1[m:n+1])"
+    },
+    {
+        "id":161,
+        "response":"def perimeter_pentagon(a):\n    return 5 * a"
+    },
+    {
+        "id":162,
+        "response":"def count_occurance(s):\n    return s.count('std')"
+    },
+    {
+        "id":163,
+        "response":"import re\ndef remove_splchar(text):\n    return re.sub('[^a-zA-Z0-9]', '', text)"
+    },
+    {
+        "id":164,
+        "response":"from typing import List, Tuple, Dict\n\ndef group_keyvalue(l: List[Tuple[str, int]]) -> Dict[str, List[int]]:\n    result = {}\n    for key, value in l:\n        if key not in result:\n            result[key] = []\n        result[key].append(value)\n    return result"
+    },
+    {
+        "id":165,
+        "response":"from typing import Dict\n\ndef is_valid_parenthese(s: str) -> bool:\n    stack: list = []\n    parentheses_map: Dict[str, str] = {\")\": \"(\", \"}\": \"{\", \"]\": \"[\"}\n    \n    for char in s:\n        if char in parentheses_map.values():\n            stack.append(char)\n        elif char in parentheses_map.keys():\n            if stack == [] or parentheses_map[char] != stack.pop():\n                return False\n    return stack == []"
+    },
+    {
+        "id":166,
+        "response":"def perimeter_triangle(a, b, c):\n    if a + b <= c or a + c <= b or b + c <= a or a <= 0 or b <= 0 or c <= 0:\n        raise ValueError(\"The given sides do not form a valid triangle\")\n    return a + b + c"
+    },
+    {
+        "id":167,
+        "response":"import math\n\ndef answer(L, R):\n    for i in range(L, R + 1):\n        for j in range(i + 1, R + 1):\n            if math.lcm(i, j) <= R:\n                return (i, j)\n    return None"
+    },
+    {
+        "id":168,
+        "response":"import re\n\ndef string_literals(patterns, text):\n    for pattern in patterns:\n        if re.search(pattern, text):\n            return 'Matched!'\n    return patterns"
+    },
+    {
+        "id":169,
+        "response":"def is_num_keith(x):\n    import math\n    digits = [int(i) for i in str(x)]\n    n = len(digits)\n    sequence = digits[:]\n    for i in range(n, x):\n        sequence.append(sum(sequence[-n:]))\n    return x in sequence"
+    },
+    {
+        "id":170,
+        "response":"import math\n\ndef distance_lat_long(slat, slon, elat, elon):\n    R = 6371\n    slat, slon, elat, elon = map(math.radians, [slat, slon, elat, elon])\n    dlat = elat - slat\n    dlon = elon - slon\n    a = math.sin(dlat\/2)**2 + math.cos(slat)*math.cos(elat)*math.sin(dlon\/2)**2\n    c = 2*math.atan2(math.sqrt(a), math.sqrt(1-a))\n    return round(R * c * 1000, 6)"
+    },
+    {
+        "id":171,
+        "response":"import os\n\ndef common_prefix_util(strings, length):\n    if not strings or length == 0:\n        return \"\"\n    prefix = os.path.commonprefix(strings)\n    return prefix[:length] if len(prefix) > length else prefix"
+    },
+    {
+        "id":172,
+        "response":"import re\ndef find_character(string):\n    uppercase = re.findall(r'[A-Z]', string)\n    lowercase = re.findall(r'[a-z]', string)\n    special_characters = re.findall(r'[^A-Za-z0-9]', string)\n    numeric_values = re.findall(r'\\d', string)\n    return uppercase, lowercase, special_characters, numeric_values"
+    },
+    {
+        "id":173,
+        "response":"from typing import List\n\ndef count_pairs(arr: List[int], n: int, k: int) -> int:\n    freq = {}\n    count = 0\n    for num in arr:\n        if num - k in freq:\n            count += 1\n        if num + k in freq:\n            count += 1\n        freq[num] = freq.get(num, 0) + 1\n    return count\n\nassert count_pairs([1, 5, 3, 4, 2], 5, 3) == 2"
+    },
+    {
+        "id":174,
+        "response":"def greater_specificnum(lst, num):\n    return all(i > num for i in lst)"
+    },
+    {
+        "id":175,
+        "response":"import typing as t\n\ndef parabola_focus(a: float, b: float, c: float) -> t.Tuple[float, float]:\n    h = -b \/ (2 * a)\n    k = c - (b**2) \/ (4 * a)\n    focus_x = h\n    focus_y = k + 1 \/ (4 * a)\n    return focus_x, focus_y"
+    },
+    {
+        "id":176,
+        "response":"import re\n\ndef check_literals(text, patterns):\n    for pattern in patterns:\n        if re.search(pattern, text):\n            return 'Matched!'\n    return 'Not Matched!'"
+    },
+    {
+        "id":177,
+        "response":"def longest_common_subsequence(X, Y, m, n):\n    L = [[None]*(n + 1) for i in range(m + 1)]\n    for i in range(m + 1):\n        for j in range(n + 1):\n            if i == 0 or j == 0 :\n                L[i][j] = 0\n            elif X[i-1] == Y[j-1]:\n                L[i][j] = L[i-1][j-1]+1\n            else:\n                L[i][j] = max(L[i-1][j], L[i][j-1])\n    return L[m][n]\n\nassert longest_common_subsequence(\"AGGTAB\" , \"GXTXAYB\", 6, 7) == 4"
+    },
+    {
+        "id":178,
+        "response":"import math\n\ndef prod_Square(n):\n    for i in range(2, int(math.sqrt(n)) + 1):\n        if n % i == 0:\n            sqrt1 = math.sqrt(i)\n            sqrt2 = math.sqrt(n \/\/ i)\n            if sqrt1 == int(sqrt1) and sqrt2 == int(sqrt2) and i != n \/\/ i:\n                return True\n    sqrt = math.sqrt(n)\n    if sqrt == int(sqrt):\n        return False\n    return False"
+    },
+    {
+        "id":179,
+        "response":"def first_Missing_Positive(arr, n):\n    arr_set = set(arr)\n    i = 1\n    while i in arr_set:\n        i += 1\n    return i"
+    },
+    {
+        "id":180,
+        "response":"def count_Intgral_Points(x1,y1,x2,y2):\n    if x1 > x2:\n        x1, x2 = x2, x1\n    if y1 > y2:\n        y1, y2 = y2, y1\n    count = 0\n    for x in range(x1, x2 + 1):\n        for y in range(y1, y2 + 1):\n            if (x - x1) * (y2 - y1) == (y - y1) * (x2 - x1) or x == x1 or x == x2 or y == y1 or y == y2:\n                count += 1\n    return count"
+    },
+    {
+        "id":181,
+        "response":"import calendar\n\ndef check_monthnumber(monthname):\n    month_names = [\"January\", \"February\", \"March\", \"April\", \"May\", \"June\", \n                  \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"]\n    month_number = month_names.index(monthname) + 1\n    return calendar.monthrange(2024, month_number)[1] == 30"
+    },
+    {
+        "id":182,
+        "response":"import re\n\ndef check_String(s):\n    return bool(re.search(r'\\d', s)) and bool(re.search(r'[a-zA-Z]', s))"
+    },
+    {
+        "id":183,
+        "response":"def remove_tuple(test_tup):\n    return tuple(sorted(set(test_tup)))"
+    },
+    {
+        "id":184,
+        "response":"def octal_To_Decimal(n):\n    return int(str(n), 8)"
+    },
+    {
+        "id":185,
+        "response":"from typing import List\n\ndef first(arr: List[int], x: int, n: int) -> int:\n    low, high = 0, n - 1\n    res = -1\n    while low <= high:\n        mid = (low + high) \/\/ 2\n        if arr[mid] == x:\n            res = mid\n            high = mid - 1\n        elif arr[mid] < x:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return res\n\nassert first([1,2,3,4,5,6,6],6,7) == 5"
+    },
+    {
+        "id":186,
+        "response":"def remove_tuples(test_list, K):\n    return [tup for tup in test_list if len(tup) != K]"
+    },
+    {
+        "id":187,
+        "response":"import operator\nimport math\n\ndef find_exponentio(test_tup1, test_tup2):\n    return tuple(map(operator.pow, test_tup1, test_tup2))"
+    },
+    {
+        "id":188,
+        "response":"import math\n\ndef largest_triangle(a, b):\n    area = (a * b) \/ 2\n    return area"
+    },
+    {
+        "id":189,
+        "response":"import math\n\ndef highest_Power_of_2(n):\n    if n <= 0:\n        return 0\n    return 2 ** math.floor(math.log2(n))"
+    },
+    {
+        "id":190,
+        "response":"def position_max(list1):\n    max_val = max(list1)\n    return [i for i, x in enumerate(list1) if x == max_val]"
+    },
+    {
+        "id":191,
+        "response":"def chkList(lst):\n    return len(set(lst)) == 1"
+    },
+    {
+        "id":192,
+        "response":"def remove_even(str1):\n    return ''.join([str1[i] for i in range(len(str1)) if i % 2 == 0])"
+    },
+    {
+        "id":193,
+        "response":"def hamming_Distance(n1,n2) :\n    return bin(n1 ^ n2).count('1')"
+    },
+    {
+        "id":194,
+        "response":"def count(s, c):\n    return s.count(c)"
+    },
+    {
+        "id":195,
+        "response":"def inversion_elements(test_tup):\n    return tuple(-i for i in test_tup)"
+    },
+    {
+        "id":196,
+        "response":"from typing import Tuple\n\ndef concatenate_elements(test_tup: Tuple[str, ...]) -> Tuple[str, ...]:\n    return tuple(test_tup[i] + test_tup[i+1] for i in range(len(test_tup) - 1))"
+    },
+    {
+        "id":197,
+        "response":"def find_longest_repeating_subseq(str):\n    n = len(str)\n    dp = [[0] * (n + 1) for _ in range(n + 1)]\n    max_length = 0\n    for i in range(1, n + 1):\n        for j in range(1, n + 1):\n            if str[i - 1] == str[j - 1] and i != j:\n                dp[i][j] = dp[i - 1][j - 1] + 1\n                max_length = max(max_length, dp[i][j])\n            else:\n                dp[i][j] = max(dp[i-1][j], dp[i][j-1])\n    return max_length"
+    },
+    {
+        "id":198,
+        "response":"import re\ndef is_decimal(num):\n    pattern = r'^\\d+(\\.\\d{1,2})?$'\n    return bool(re.match(pattern, num))"
+    },
+    {
+        "id":199,
+        "response":"import heapq\n\ndef heap_replace(heap, a):\n    heapq.heapreplace(heap, a)\n    return list(heap)"
+    },
+    {
+        "id":200,
+        "response":"import re\ndef is_allowed_specific_char(string):\n    pattern = r'^[A-Za-z0-9]+$'\n    return bool(re.match(pattern, string))"
+    },
+    {
+        "id":201,
+        "response":"import math\n\ndef count_Num(n):\n    count = 0\n    for i in range(1, 2**n):\n        bin_num = bin(i)[2:].zfill(n)\n        if bin_num[n-1] == '1' and bin_num[0] == '1':\n            count += 1\n    return count"
+    },
+    {
+        "id":202,
+        "response":"def fourth_Power_Sum(n):\n    return sum(i**4 for i in range(1, n+1))"
+    },
+    {
+        "id":203,
+        "response":"from typing import Tuple\n\ndef concatenate_strings(test_tup1: Tuple[str, ...], test_tup2: Tuple[str, ...]) -> Tuple[str, ...]:\n    return tuple(a + b for a, b in zip(test_tup1, test_tup2))"
+    },
+    {
+        "id":204,
+        "response":"import math\n\ndef degree_radian(radian):\n    return math.degrees(radian)"
+    },
+    {
+        "id":205,
+        "response":"def decode_list(alist):\n    result = []\n    for item in alist:\n        if isinstance(item, list):\n            result.extend([item[1]] * item[0])\n        else:\n            result.append(item)\n    return result"
+    },
+    {
+        "id":206,
+        "response":"from typing import List, Union\n\ndef check_subset_list(list1: List[Union[int, float]], list2: List[List[Union[int, float]]]) -> bool:\n    flat_list2 = [item for sublist in list2 for item in sublist]\n    return set(list1).issubset(set(flat_list2))"
+    },
+    {
+        "id":207,
+        "response":"from collections import OrderedDict\n\ndef first_Repeated_Char(str):\n    char_count = OrderedDict()\n    for char in str:\n        char = char.lower()\n        if char in char_count:\n            return char\n        else:\n            char_count[char] = 1\n    return None"
+    },
+    {
+        "id":208,
+        "response":"import math\n\ndef min_Operations(A, B):\n    if A == B:\n        return 0\n    elif A > B:\n        return math.ceil((A - B) \/ 2)\n    else:\n        return math.ceil((B - A) \/ 2)"
+    },
+    {
+        "id":209,
+        "response":"import heapq\n\ndef extract_min_max(test_tup, K):\n    sorted_tup = sorted(test_tup)\n    min_k = heapq.nsmallest(K, sorted_tup)\n    max_k = heapq.nlargest(K, sorted_tup)\n    result = tuple(sorted(min_k + max_k))\n    return result"
+    },
+    {
+        "id":210,
+        "response":"import re\n\ndef replace_max_specialchar(text, n):\n    special_chars = re.finditer('[ .,]', text)\n    special_chars_list = [match.group() for match in special_chars]\n    if len(special_chars_list) <= n:\n        return text.replace(' ', ':').replace(',', ':').replace('.', ':')\n    else:\n        count = 0\n        new_text = ''\n        for char in text:\n            if char in [' ', ',', '.'] and count < n:\n                new_text += ':'\n                count += 1\n            else:\n                new_text += char\n        return new_text"
+    },
+    {
+        "id":211,
+        "response":"def first_even(nums):\n    for num in nums:\n        if num % 2 == 0:\n            return num\n    return None"
+    },
+    {
+        "id":212,
+        "response":"def check_type(test_tuple):\n    return len(set(type(i) for i in test_tuple)) == 1"
+    },
+    {
+        "id":213,
+        "response":"def is_majority(arr, n, x):\n    count = sum(1 for i in arr if i == x)\n    return count > n \/ 2"
+    },
+    {
+        "id":214,
+        "response":"def count_Set_Bits(n):\n    count = 0\n    while n:\n        count += n & 1\n        n >>= 1\n    return count"
+    },
+    {
+        "id":215,
+        "response":"def find_Min(arr, low, high):\n    if low == high:\n        return arr[low]\n    if high == low + 1:\n        return min(arr[low], arr[high])\n    mid = (low + high) \/\/ 2\n    if arr[mid] > arr[high]:\n        return find_Min(arr, mid + 1, high)\n    elif arr[mid] < arr[low]:\n        return find_Min(arr, low, mid)\n    else:\n        return min(find_Min(arr, low, mid), find_Min(arr, mid + 1, high))"
+    },
+    {
+        "id":216,
+        "response":"def odd_values_string(str):\n    return ''.join([str[i] for i in range(len(str)) if i % 2 == 0])"
+    },
+    {
+        "id":217,
+        "response":"def min_of_three(a, b, c):\n    return min(a, b, c)"
+    },
+    {
+        "id":218,
+        "response":"def all_Bits_Set_In_The_Given_Range(n, l, r):\n    import math\n    mask = ((1 << (r - l + 1)) - 1) << l\n    return (n & mask) == mask"
+    },
+    {
+        "id":219,
+        "response":"def re_arrange_array(arr, n):\n    negative = []\n    positive = []\n    for i in arr:\n        if i < 0:\n            negative.append(i)\n        else:\n            positive.append(i)\n    return negative + positive"
+    },
+    {
+        "id":220,
+        "response":"def replace_blank(str1, char):\n    return str1.replace(' ', char)"
+    },
+    {
+        "id":221,
+        "response":"def max_sum(tri, n):\n    for i in range(n-2, -1, -1):\n        for j in range(len(tri[i])):\n            tri[i][j] += max(tri[i+1][j], tri[i+1][j+1])\n    return tri[0][0]"
+    },
+    {
+        "id":222,
+        "response":"import heapq\n\ndef larg_nnum(list1, n):\n    return heapq.nlargest(n, list1)"
+    },
+    {
+        "id":223,
+        "response":"import math\n\ndef lateralsuface_cylinder(r,h):\n    return round(2 * math.pi * r * h, 10)"
+    },
+    {
+        "id":224,
+        "response":"def volume_cube(l):\n    return l ** 3"
+    },
+    {
+        "id":225,
+        "response":"def even_bit_set_number(n):\n    result = 0\n    i = 0\n    while n:\n        if n & 1:\n            result |= 1 << i\n        n >>= 1\n        i += 1\n    return result"
+    },
+    {
+        "id":226,
+        "response":"import math\n\ndef No_of_Triangle(N, K):\n    if N < 3 or K >= N:\n        return 0\n    total = (N * (N - 1) * (N - 2)) \/\/ 6\n    subtract = 0\n    for i in range(3, K + 1):\n        subtract += math.comb(K, i) * math.comb(N - K, 3 - i)\n    subtract += math.comb(K, 3)\n    return total - subtract"
+    },
+    {
+        "id":227,
+        "response":"from typing import List, Tuple, Dict\n\ndef check_occurences(test_list: List[Tuple[int, int]]) -> Dict[Tuple[int, int], int]:\n    occurences: Dict[Tuple[int, int], int] = {}\n    for tup in test_list:\n        key: Tuple[int, int] = tuple(sorted(tup))\n        if key in occurences:\n            occurences[key] += 1\n        else:\n            occurences[key] = 1\n    return occurences"
+    },
+    {
+        "id":228,
+        "response":"def number_of_substrings(s: str) -> int:\n    n = len(s)\n    return n * (n + 1) \/\/ 2"
+    },
+    {
+        "id":229,
+        "response":"import math\nimport itertools\n\ndef get_total_number_of_sequences(m, n):\n    if m < 1 or n < 1:\n        return 0\n    if n == 1:\n        return min(m, 1)\n    dp = [[0]*(n+1) for _ in range(m+1)]\n    for i in range(1, m+1):\n        dp[i][1] = 1\n    for i in range(1, n+1):\n        dp[0][i] = 0\n    for i in range(1, m+1):\n        for j in range(2, n+1):\n            for k in range(1, math.floor(i\/2)+1):\n                dp[i][j] += dp[k][j-1]\n    total = 0\n    for i in range(1, m+1):\n        total += dp[i][n]\n    return total\n\nassert get_total_number_of_sequences(10, 4) == 4"
+    },
+    {
+        "id":230,
+        "response":"def replace_list(list1, list2):\n    if len(list1) > 0 and len(list2) > 0:\n        list1[-1:] = list2\n    return list1"
+    },
+    {
+        "id":231,
+        "response":"def array_3d(m, n, o):\n    return [[['*' for _ in range(m)] for _ in range(n)] for _ in range(o)]"
+    },
+    {
+        "id":232,
+        "response":"def count_charac(str1):\n    return len(str1)\n\nassert count_charac(\"python programming\")==18"
+    },
+    {
+        "id":233,
+        "response":"from collections import defaultdict\nfrom typing import List, Tuple, Any\n\ndef sort_on_occurence(lst: List[Tuple[int, str]]) -> List[Tuple[Any, ...]]:\n    count_dict = defaultdict(int)\n    for item in lst:\n        count_dict[item[0]] += 1\n\n    result = defaultdict(list)\n    for item in lst:\n        result[item[0]].append(item[1])\n\n    return [(key, *value, count_dict[key]) for key, value in sorted(result.items(), key=lambda x: count_dict[x[0]], reverse=True)]"
+    },
+    {
+        "id":234,
+        "response":"import math\n\ndef next_Perfect_Square(N):\n    root = math.ceil(math.sqrt(N))\n    if root * root == N:\n        root += 1\n    return root * root"
+    },
+    {
+        "id":235,
+        "response":"def max_sum(arr, n):\n    inc = [0]*n\n    dec = [0]*n\n    inc[0] = arr[0]\n    dec[n-1] = arr[n-1]\n    for i in range(1, n):\n        inc[i] = max(inc[i-1]+arr[i], arr[i])\n    for i in range(n-2, -1, -1):\n        dec[i] = max(dec[i+1]+arr[i], arr[i])\n    max_sum = float('-inf')\n    for i in range(n-1):\n        max_sum = max(max_sum, inc[i]+dec[i+1])\n    return max(max_sum, max(inc), max(dec))"
+    },
+    {
+        "id":236,
+        "response":"def babylonian_squareroot(number):\n    if number < 0:\n        raise ValueError(\"Input must be a non-negative number.\")\n    if number == 0 or number == 1:\n        return number\n    \n    x = number\n    y = (x + 1) \/ 2\n\n    while y < x:\n        x = y\n        y = (x + number \/ x) \/ 2\n\n    return x"
+    },
+    {
+        "id":237,
+        "response":"import re\n\ndef lps(str):\n    str = re.sub('[\\W_]+', '', str).lower()\n    n = len(str)\n    dp = [[0]*n for _ in range(n)]\n    for i in range(n):\n        dp[i][i] = 1\n    for length in range(2, n+1):\n        for i in range(n-length+1):\n            j = i + length - 1\n            if str[i] == str[j]:\n                if length == 2:\n                    dp[i][j] = 2\n                else:\n                    dp[i][j] = dp[i+1][j-1] + 2\n            else:\n                dp[i][j] = max(dp[i][j-1], dp[i+1][j])\n    return dp[0][n-1]\n\nassert lps(\"TENS FOR TENS\") == 5"
+    },
+    {
+        "id":238,
+        "response":"def harmonic_sum(n):\n    sum = 0\n    for i in range(1, n+1):\n        sum += 1 \/ i\n    return sum"
+    },
+    {
+        "id":239,
+        "response":"def intersection_array(array_nums1,array_nums2):\n    set1 = set(array_nums1)\n    set2 = set(array_nums2)\n    return sorted(list(set1 & set2))"
+    },
+    {
+        "id":240,
+        "response":"def count_X(tup, x):\n    return tup.count(x)"
+    },
+    {
+        "id":241,
+        "response":"def insert_element(lst, element):\n    result = []\n    for i in lst:\n        result.append(element)\n        result.append(i)\n    return result\n\nassert insert_element(['Red', 'Green', 'Black'] ,'c')==['c', 'Red', 'c', 'Green', 'c', 'Black']"
+    },
+    {
+        "id":242,
+        "response":"import cmath\n\ndef convert(number):\n    if isinstance(number, complex):\n        return (number.real, number.imag)\n    elif isinstance(number, (int, float)):\n        return (float(number), 0.0)\n    else:\n        raise TypeError(\"Unsupported type\")\n\n# Test cases\nassert convert(1) == (1.0, 0.0)\nassert convert(1 + 1j) == (1.0, 1.0)"
+    },
+    {
+        "id":243,
+        "response":"def count_integer(list1):\n    return sum(isinstance(x, int) for x in list1)"
+    },
+    {
+        "id":244,
+        "response":"import re\ndef words_ae(text):\n    return re.findall(r'\\b[aeAE]\\w*', text.lower())"
+    },
+    {
+        "id":245,
+        "response":"import itertools\n\ndef combinations_colors(colors, n):\n    return list(itertools.product(colors, repeat=n))"
+    },
+    {
+        "id":246,
+        "response":"import math\n\ndef count_Primes_nums(n):\n    if n < 2:\n        return 0\n    primes = [True] * n\n    primes[0] = primes[1] = False\n    for i in range(2, int(math.sqrt(n)) + 1):\n        if primes[i]:\n            for j in range(i * i, n, i):\n                primes[j] = False\n    return sum(1 for prime in primes if prime)"
+    },
+    {
+        "id":247,
+        "response":"def swap_numbers(a, b):\n    return b, a\n\nassert swap_numbers(10, 20) == (20, 10)"
+    },
+    {
+        "id":248,
+        "response":"from typing import List\n\ndef count_odd(array_nums: List[int]) -> int:\n    odd_count = list(filter(lambda x: x % 2 != 0, array_nums))\n    return len(odd_count)"
+    },
+    {
+        "id":249,
+        "response":"from typing import Tuple\n\ndef maximize_elements(test_tup1: Tuple[Tuple[int, int], ...], test_tup2: Tuple[Tuple[int, int], ...]) -> Tuple[Tuple[int, int], ...]:\n    return tuple(((max(a, b), max(c, d)) for (a, c), (b, d) in zip(test_tup1, test_tup2)))"
+    },
+    {
+        "id":250,
+        "response":"import itertools\n\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ndef newman_prime(n):\n    newman_shanks_williams_primes = []\n    num = 2\n    while len(newman_shanks_williams_primes) < n:\n        if is_prime(num) and is_prime(2**num - 1) and ((2**(num-1)*(2**num - 1)) % (num) == 1):\n            newman_shanks_williams_primes.append(num)\n        num += 1\n    return newman_shanks_williams_primes[-1]"
+    },
+    {
+        "id":251,
+        "response":"import operator\ndef division_elements(test_tup1, test_tup2):\n    return tuple(map(operator.truediv, test_tup1, test_tup2))"
+    },
+    {
+        "id":252,
+        "response":"def split_two_parts(list1, L):\n    return list1[:L], list1[L:]"
+    },
+    {
+        "id":253,
+        "response":"def merge_dict(d1, d2):\n    return {**d2, **d1}"
+    },
+    {
+        "id":254,
+        "response":"def dog_age(h_age):\n    if h_age <= 2:\n        return h_age * 10.5\n    else:\n        return 21 + (h_age - 2) * 4"
+    },
+    {
+        "id":255,
+        "response":"from typing import List\n\ndef list_split(S: List, step: int) -> List:\n    return [S[i::step] for i in range(step)]"
+    },
+    {
+        "id":256,
+        "response":"def lateralsurface_cube(l):\n    return 4*l*l"
+    },
+    {
+        "id":257,
+        "response":"def square_Sum(n):\n    return sum(i**2 for i in range(1, n*2, 2))"
+    },
+    {
+        "id":258,
+        "response":"def find_star_num(n):\n    return n * (n * 2 - 1)"
+    },
+    {
+        "id":259,
+        "response":"def ascii_value(k):\n    return ord(k)"
+    },
+    {
+        "id":260,
+        "response":"def sum_even_and_even_index(arr, n):\n    total = 0\n    for i in range(n):\n        if i % 2 == 0 and arr[i] % 2 == 0:\n            total += arr[i]\n    return total"
+    },
+    {
+        "id":261,
+        "response":"def even_Power_Sum(n):\n    return sum(i**5 for i in range(2, 2*n+1, 2))"
+    },
+    {
+        "id":262,
+        "response":"def rear_extract(test_list):\n    return [sub[-1] for sub in test_list]"
+    },
+    {
+        "id":263,
+        "response":"from typing import Tuple\n\ndef substract_elements(test_tup1: Tuple[int, int, int], test_tup2: Tuple[int, int, int]) -> Tuple[int, int, int]:\n    return tuple(a - b for a, b in zip(test_tup1, test_tup2))"
+    },
+    {
+        "id":264,
+        "response":"import math\n\ndef even_binomial_Coeff_Sum(n):\n    sum = 0\n    for k in range(n + 1):\n        if k % 2 == 0:\n            sum += math.comb(n, k)\n    return sum"
+    },
+    {
+        "id":265,
+        "response":"def get_Position(a,n,m):\n    a.pop(m-1)\n    return a.index(a[-1]) + 1"
+    },
+    {
+        "id":266,
+        "response":"import math\n\ndef volume_cylinder(r, h):\n    return round(math.pi * r ** 2 * h, 12)"
+    },
+    {
+        "id":267,
+        "response":"def dict_filter(dict, n):\n    return {key: value for key, value in dict.items() if value >= n}"
+    },
+    {
+        "id":268,
+        "response":"def count_first_elements(test_tup):\n    count = 0\n    for elem in test_tup:\n        if not isinstance(elem, tuple):\n            count += 1\n        else:\n            break\n    return count"
+    },
+    {
+        "id":269,
+        "response":"import math\n\ndef is_num_decagonal(n):\n    return int((8 * n * n - 6 * n + 1) ** 0.5 + 3 * n - 1) \/\/ 4"
+    },
+    {
+        "id":270,
+        "response":"def sequential_search(dlist, item):\n    for i in range(len(dlist)):\n        if dlist[i] == item:\n            return (True, i)\n    return (False, -1)"
+    },
+    {
+        "id":271,
+        "response":"def all_unique(test_list):\n    return len(test_list) == len(set(test_list))"
+    },
+    {
+        "id":272,
+        "response":"from typing import List\nimport operator\n\ndef sub_list(nums1: List[int], nums2: List[int]) -> List[int]:\n    return list(map(operator.sub, nums1, nums2))"
+    },
+    {
+        "id":273,
+        "response":"def validate(n):\n    freq = {}\n    for digit in str(n):\n        if digit in freq:\n            freq[digit] += 1\n        else:\n            freq[digit] = 1\n    for digit, count in freq.items():\n        if int(digit) < count:\n            return False\n    return True"
+    },
+    {
+        "id":274,
+        "response":"def check_element(lst, element):\n    return all(i == element for i in lst)"
+    },
+    {
+        "id":275,
+        "response":"import re\n\ndef text_match_two_three(text):\n    pattern = r\"^.*a(b{2,3}).*$\"\n    if re.match(pattern, text):\n        return text\n    else:\n        return 'Not matched!'"
+    },
+    {
+        "id":276,
+        "response":"from typing import List\n\ndef max_sub_array_sum_repeated(a: List[int], n: int, k: int) -> int:\n    max_so_far = float('-inf')\n    max_ending_here = 0\n    max_so_far_kadane = float('-inf')\n    max_ending_here_kadane = 0\n    total_sum = 0\n\n    for i in range(n):\n        total_sum += a[i]\n        max_ending_here += a[i]\n        if max_ending_here > max_so_far:\n            max_so_far = max_ending_here\n        if max_ending_here < 0:\n            max_ending_here = 0\n\n        max_ending_here_kadane += a[i]\n        if max_ending_here_kadane > max_so_far_kadane:\n            max_so_far_kadane = max_ending_here_kadane\n        if max_ending_here_kadane < 0:\n            max_ending_here_kadane = 0\n\n    if k == 1:\n        return max_so_far_kadane\n\n    if total_sum > 0:\n        return max(max_so_far_kadane, k * total_sum + max_so_far)\n    else:\n        return max(max_so_far_kadane, max_so_far)"
+    },
+    {
+        "id":277,
+        "response":"def square_Sum(n):\n    return sum([i**2 for i in range(2, 2*n+1, 2)])"
+    },
+    {
+        "id":278,
+        "response":"import math\n\ndef modular_inverse(arr, N, P):\n    count = 0\n    for i in arr:\n        if pow(i, P-2, P) == i % P and i != 0:\n            count += 1\n    return count"
+    },
+    {
+        "id":279,
+        "response":"def odd_Days(N):\n    if N % 4 == 0:\n        if N % 100 == 0:\n            if N % 400 == 0:\n                return 1\n            else:\n                return 0\n        else:\n            return 1\n    else:\n        return 1\n\ndef odd_days_in_N_years(N):\n    odd_days = 0\n    for year in range(1, N+1):\n        if is_leap_year(year):\n            odd_days += 2\n        else:\n            odd_days += 1\n    return odd_days % 7\n\ndef is_leap_year(year):\n    if year % 4 == 0:\n        if year % 100 == 0:\n            if year % 400 == 0:\n                return True\n            else:\n                return False\n        else:\n            return True\n    else:\n        return False\n\ndef odd_Days(N):\n    return odd_days_in_N_years(N)"
+    },
+    {
+        "id":280,
+        "response":"def max_length(list1):\n    max_len = max(len(sublist) for sublist in list1)\n    return (max_len, next(sublist for sublist in list1 if len(sublist) == max_len))"
+    },
+    {
+        "id":281,
+        "response":"def count_no_of_ways(n, k):\n    if n == 0:\n        return 0\n    elif n == 1:\n        return k\n    else:\n        same_color = k\n        diff_color = k * (k - 1)\n        for i in range(2, n):\n            same_color, diff_color = diff_color, (same_color + diff_color) * (k - 1)\n        return same_color + diff_color"
+    },
+    {
+        "id":282,
+        "response":"import math\n\ndef find(n, m):\n    if m == 0:\n        raise ZeroDivisionError(\"Cannot divide by zero\")\n    return math.floor(n \/ m)"
+    },
+    {
+        "id":283,
+        "response":"import math\n\ndef otherside_rightangle(w, h):\n    return math.sqrt(w**2 + h**2)"
+    },
+    {
+        "id":284,
+        "response":"def max_val(listval):\n    return max(i for i in listval if isinstance(i, (int, float)))"
+    },
+    {
+        "id":285,
+        "response":"def sum_div(number):\n    if number < 1:\n        return 0\n    sum = 0\n    for i in range(1, number):\n        if number % i == 0:\n            sum += i\n    return sum"
+    },
+    {
+        "id":286,
+        "response":"import math\n\ndef get_Inv_Count(arr, n):\n    inv_count = 0\n    for i in range(n):\n        for j in range(i+1, n):\n            if arr[i] > arr[j]:\n                inv_count += 1\n    return inv_count\n\nassert get_Inv_Count([1,20,6,4,5],5) == 5"
+    },
+    {
+        "id":287,
+        "response":"def flatten_list(list1):\n    result = []\n    for item in list1:\n        if isinstance(item, list):\n            result.extend(flatten_list(item))\n        else:\n            result.append(item)\n    return result"
+    },
+    {
+        "id":288,
+        "response":"def intersection_nested_lists(l1, l2):\n    result = []\n    for sublist in l2:\n        intersection = [element for element in sublist if element in l1]\n        if intersection:\n            result.append(intersection)\n    return result"
+    },
+    {
+        "id":289,
+        "response":"from typing import List, Tuple\n\ndef max_aggregate(stdata: List[Tuple[str, int]]) -> Tuple[str, int]:\n    student_data = {}\n    for student, score in stdata:\n        if student in student_data:\n            student_data[student] += score\n        else:\n            student_data[student] = score\n    return max(student_data.items(), key=lambda x: x[1])"
+    },
+    {
+        "id":290,
+        "response":"import math\n\ndef count_binary_seq(n):\n    return math.comb(2*n, n)"
+    },
+    {
+        "id":291,
+        "response":"def dict_depth(d):\n    if not isinstance(d, dict):\n        return 0\n    elif not d:\n        return 1\n    else:\n        return 1 + max(dict_depth(v) for v in d.values() if isinstance(v, dict))"
+    },
+    {
+        "id":292,
+        "response":"import math\n\ndef set_Bit_Number(n):\n    if n == 0:\n        return 0\n    return 1 << (int(math.log2(n & -n)))"
+    },
+    {
+        "id":293,
+        "response":"import numpy as np\n\ndef solve(a, n):\n    forward = np.cumsum(a)\n    backward = np.cumsum(a[::-1])[::-1]\n    return np.array_equal(forward, backward)\n\nassert solve([1,0,2],3) \nprint(solve([1,0,2],3))\nassert solve([1,2,1],3) \nprint(solve([1,2,1],3))"
+    },
+    {
+        "id":294,
+        "response":"def find_Element(arr, ranges, rotations, index):\n    n = len(arr)\n    effective_rotations = 0\n    if isinstance(rotations, int):\n        effective_rotations = rotations\n    else:\n        for r, rot in zip(ranges, rotations):\n            start, end = r\n            length = end - start + 1\n            effective_rotations += rot % length\n    effective_rotations %= n\n    new_index = (index - effective_rotations) % n\n    return arr[new_index]"
+    },
+    {
+        "id":295,
+        "response":"def start_withp(words):\n    p_words = [word for sentence in words for word in sentence.split() if word.startswith('P')]\n    if len(p_words) >= 2:\n        return (p_words[0], p_words[1])\n    else:\n        return ()"
+    },
+    {
+        "id":296,
+        "response":"def max_sum_increasing_subseq(a, n, index, k):\n    import bisect\n    dp = []\n    for i in range(index, k):\n        if not dp:\n            dp.append(a[i])\n        else:\n            if a[i] > dp[-1]:\n                dp.append(dp[-1] + a[i])\n            else:\n                idx = bisect.bisect_left(dp, a[i])\n                if idx == len(dp):\n                    dp.append(a[i])\n                else:\n                    dp[idx] = a[i]\n    return max(dp) if dp else 0"
+    },
+    {
+        "id":297,
+        "response":"def colon_tuplex(tuplex, m, n):\n    lst = list(tuplex)\n    if m < len(lst):\n        if isinstance(lst[m], list):\n            lst[m].append(n)\n        else:\n            lst[m] = n\n    return tuple(lst)"
+    },
+    {
+        "id":298,
+        "response":"import heapq\nimport itertools\n\ndef large_product(nums1, nums2, N):\n    products = [a * b for a, b in itertools.product(nums1, nums2)]\n    return heapq.nlargest(N, products)"
+    },
+    {
+        "id":299,
+        "response":"def maximum(a, b):\n    return max(a, b)"
+    },
+    {
+        "id":300,
+        "response":"def string_to_tuple(str1):\n    return tuple(str1)"
+    },
+    {
+        "id":301,
+        "response":"def set_left_most_unset_bit(n):\n    if n == 0:\n        return 1\n    bit_length = n.bit_length()\n    left_most_unset_bit_position = (1 << bit_length) - 1\n    xor_result = n ^ left_most_unset_bit_position\n    if xor_result == left_most_unset_bit_position:\n        return n | (1 << (bit_length - 1))\n    else:\n        return n"
+    },
+    {
+        "id":302,
+        "response":"import math\n\ndef volume_cone(r, h):\n    return (1\/3) * math.pi * r**2 * h"
+    },
+    {
+        "id":303,
+        "response":"def pos_nos(list1):\n    pos_list = [i for i in list1 if i > 0]\n    return tuple(pos_list) if len(pos_list) > 1 else pos_list[0] if pos_list else ()"
+    },
+    {
+        "id":304,
+        "response":"import sys\n\ndef max_sum_rectangular_grid(grid, n) :\n    if n == 0:\n        return 0\n    \n    dp = [[0]*n for _ in range(2)]\n    \n    dp[0][0] = grid[0][0]\n    dp[1][0] = grid[1][0]\n    \n    for i in range(1, n):\n        dp[0][i] = max(dp[1][i-1] + grid[0][i], dp[1][i-1])\n        dp[1][i] = max(dp[0][i-1] + grid[1][i], dp[0][i-1])\n        \n    return max(dp[0][n-1], dp[1][n-1])\n\nassert max_sum_rectangular_grid([ [1, 4, 5], [2, 0, 0 ] ], 3) == 7"
+    },
+    {
+        "id":305,
+        "response":"def find_Max_Len_Even(str):\n    words = str.split()\n    max_len = 0\n    max_len_word = \"\"\n    for word in words:\n        if len(word) % 2 == 0 and len(word) > max_len:\n            max_len = len(word)\n            max_len_word = word\n    return max_len_word"
+    },
+    {
+        "id":306,
+        "response":"from typing import List\n\ndef find_last_occurrence(A: List[int], x: int) -> int:\n    for i in range(len(A) - 1, -1, -1):\n        if A[i] == x:\n            return i\n    return -1\n\nassert find_last_occurrence([2, 5, 5, 5, 6, 6, 8, 9, 9, 9], 5) == 3"
+    },
+    {
+        "id":307,
+        "response":"import itertools\n\ndef modified_encode(alist):\n    result = []\n    for key, group in itertools.groupby(alist):\n        group_list = list(group)\n        if len(group_list) == 1:\n            result.append(key)\n        else:\n            result.append([len(group_list), key])\n    return result"
+    },
+    {
+        "id":308,
+        "response":"import math\n\ndef max_volume(s):\n    l = s \/ 4\n    w = l\n    h = s - 2 * l\n    return int(l * w * h) if l > 0 and h > 0 else 0"
+    },
+    {
+        "id":309,
+        "response":"import re\ndef find_long_word(text):\n    return re.findall(r'\\b\\w{5}\\b', text)"
+    },
+    {
+        "id":310,
+        "response":"def sum_difference(n):\n    sum_of_squares = sum(i**2 for i in range(1, n+1))\n    square_of_sum = sum(range(1, n+1))**2\n    return square_of_sum - sum_of_squares"
+    },
+    {
+        "id":311,
+        "response":"def find_demlo(s):\n    n = len(s)\n    result = \"\"\n    for i in range(1, n + 1):\n        result += str(i)\n    for i in range(n - 1, 0, -1):\n        result += str(i)\n    return result"
+    },
+    {
+        "id":312,
+        "response":"def position_min(list1):\n    min_val = min(list1)\n    return [i for i, x in enumerate(list1) if x == min_val]"
+    },
+    {
+        "id":313,
+        "response":"def right_rotate(arr, n):\n    pos = []\n    neg = []\n    for i in arr:\n        if i < 0:\n            neg.append(i)\n        else:\n            pos.append(i)\n    res = []\n    min_len = min(len(pos), len(neg))\n    for i in range(min_len):\n        res.append(neg[i])\n        res.append(pos[i])\n    res += pos[min_len:]\n    res += neg[min_len:]\n    return res\n\nassert right_rotate([-5, -2, 5, 2, 4, 7, 1, 8, 0, -8], 10) == [-5, 5, -2, 2, -8, 4, 7, 1, 8, 0]"
+    },
+    {
+        "id":314,
+        "response":"def sum_of_alternates(test_tuple):\n    if len(test_tuple) == 0:\n        return (0, 0)\n    first_sum = sum(test_tuple[::2])\n    second_sum = sum(test_tuple[1::2])\n    return (first_sum, second_sum)"
+    },
+    {
+        "id":315,
+        "response":"import math\n\ndef get_Min_Squares(n):\n    dp = [float('inf')] * (n + 1)\n    dp[0] = 0\n    for i in range(1, n + 1):\n        j = 1\n        while j * j <= i:\n            dp[i] = min(dp[i], dp[i - j * j] + 1)\n            j += 1\n    return dp[n]\n\nassert get_Min_Squares(6) == 3"
+    },
+    {
+        "id":316,
+        "response":"from collections import Counter\nimport re\n\ndef most_occurrences(test_list):\n    words = re.findall(r'\\b\\w+\\b', ' '.join(test_list).lower())\n    counter = Counter(words)\n    max_count = max(counter.values())\n    most_common_words = [word for word, count in counter.items() if count == max_count]\n    return min(most_common_words)\n\nassert most_occurrences([\"UTS is best for RTF\", \"RTF love UTS\", \"UTS is best\"] ) == 'uts'"
+    },
+    {
+        "id":317,
+        "response":"def check_isosceles(x,y,z):\n    sides = [x, y, z]\n    sides.sort()\n    return sides[0]**2 + sides[1]**2 == sides[2]**2"
+    },
+    {
+        "id":318,
+        "response":"from typing import List\n\ndef rotate_left(list1: List[int], m: int, n: int) -> List[int]:\n    n = n % len(list1)\n    return list1[n:] + list1[:n]"
+    },
+    {
+        "id":319,
+        "response":"def neg_count(lst):\n    return sum(1 for x in lst if x < 0)"
+    },
+    {
+        "id":320,
+        "response":"import re\ndef find_char(text):\n    return re.findall(r'\\b\\w{3,5}\\b', text)"
+    },
+    {
+        "id":321,
+        "response":"def count_unset_bits(n):\n    import math\n    if n == 0:\n        return 1\n    bits = math.floor(math.log2(n)) + 1\n    return bits - bin(n).count('1')"
+    },
+    {
+        "id":322,
+        "response":"from collections import Counter\n\ndef char_frequency(str1):\n    str1 = str1.lower()\n    frequency = Counter(str1)\n    return dict(frequency)\n\nassert char_frequency('python')=={'p': 1, 'y': 1, 't': 1, 'h': 1, 'o': 1, 'n': 1}"
+    },
+    {
+        "id":323,
+        "response":"def Sort(sub_li):\n    return sorted(sub_li, key=lambda x: x[1])"
+    },
+    {
+        "id":324,
+        "response":"def check_Validity(a, b, c):\n    if a + b > c and a + c > b and b + c > a:\n        return True\n    else:\n        return False"
+    },
+    {
+        "id":325,
+        "response":"def ap_sum(a, n, d):\n    return n * (2 * a + (n - 1) * d) \/\/ 2"
+    },
+    {
+        "id":326,
+        "response":"import calendar\n\ndef check_monthnum(monthname):\n    month_names = [\"January\", \"February\", \"March\", \"April\", \"May\", \"June\", \n                  \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"]\n    month_number = month_names.index(monthname) + 1\n    return calendar.monthrange(2024, month_number)[1] == 28"
+    },
+    {
+        "id":327,
+        "response":"import re\n\ndef text_match_word(text):\n    pattern = r'\\w+[.,!?;:\\s]*$'\n    if re.search(pattern, text):\n        return 'Found a match!'\n    else:\n        return 'Not found'"
+    },
+    {
+        "id":328,
+        "response":"def check_Equality(s):\n    n = len(s)\n    res = 0\n    for i in range(n):\n        for j in range(i + 1, n + 1):\n            if s[i] == s[j - 1]:\n                res += 1\n    return res"
+    },
+    {
+        "id":329,
+        "response":"import math\n\ndef find_Divisor(x, y):\n    def gcd(a, b):\n        while b:\n            a, b = b, a % b\n        return a\n\n    def count_divisors(n):\n        count = 0\n        for i in range(1, int(math.sqrt(n)) + 1):\n            if n % i == 0:\n                if n \/\/ i == i:\n                    count += 1\n                else:\n                    count += 2\n        return count\n\n    max_divisor = 0\n    max_count = 0\n    for i in range(min(x, y), 0, -1):\n        if x % i == 0 and y % i == 0:\n            count = count_divisors(i)\n            if count > max_count:\n                max_count = count\n                max_divisor = i\n    return max_divisor"
+    },
+    {
+        "id":330,
+        "response":"def sum_three_smallest_nums(lst):\n    return sum(sorted([i for i in lst if i > 0])[:3])"
+    },
+    {
+        "id":331,
+        "response":"def set_to_tuple(s):\n    return tuple(sorted(s))"
+    },
+    {
+        "id":332,
+        "response":"import heapq\n\ndef smallest_range(nums):\n    pq = [(row[0], i, 0) for i, row in enumerate(nums)]\n    heapq.heapify(pq)\n    ans = -1e9, 1e9\n    right = max(row[0] for row in nums)\n    while pq:\n        left, i, j = heapq.heappop(pq)\n        if right - left < ans[1] - ans[0]:\n            ans = left, right\n        if j + 1 == len(nums[i]):\n            return ans\n        v = nums[i][j+1]\n        right = max(right, v)\n        heapq.heappush(pq, (v, i, j+1))\n    return ans\n\nassert smallest_range([[3, 6, 8, 10, 15], [1, 5, 12], [4, 8, 15, 16], [2, 6]]) == (4, 6)"
+    },
+    {
+        "id":333,
+        "response":"import re\n\ndef dig_let(s):\n    letters = len(re.findall(r'[a-zA-Z]', s))\n    digits = len(re.findall(r'\\d', s))\n    return letters, digits"
+    },
+    {
+        "id":334,
+        "response":"import math\n\ndef count_Odd_Squares(n, m):\n    count = 0\n    i = 1\n    while i * i <= m:\n        square = i * i\n        if square >= n and square % 2 != 0:\n            count += 1\n        i += 1\n    return count"
+    },
+    {
+        "id":335,
+        "response":"from typing import List\n\ndef diff_consecutivenums(nums: List[int]) -> List[int]:\n    if len(nums) < 2:\n        return []\n    return [abs(nums[i] - nums[i-1]) for i in range(1, len(nums))]"
+    },
+    {
+        "id":336,
+        "response":"import math\n\ndef zigzag(n, k):\n    if k == 1:\n        return n\n    if k >= n:\n        return n - 1\n    dp = [0] * (n + 1)\n    dp[1] = 1\n    for i in range(2, n + 1):\n        dp[i] = i\n        for j in range(1, min(i, k) + 1):\n            dp[i] = max(dp[i], dp[i - j] + 1)\n    return dp[n]\n\n# or \n\ndef zigzag(n, k):\n    if k == 1:\n        return n\n    if n <= k:\n        return n - 1\n    if k == 2:\n        if n % 2 == 0:\n            return n\n        else:\n            return n + 1\n    return n + (k - 2 if n > k else n - 2)"
+    },
+    {
+        "id":337,
+        "response":"def count_Squares(m,n):\n    total = 0\n    for i in range(1, m+1):\n        for j in range(1, n+1):\n            total += min(m-i+1, n-j+1)\n    return total"
+    },
+    {
+        "id":338,
+        "response":"import math\n\ndef bin_coff(n):\n    return math.comb(2*n, n) \/\/ (n + 1)"
+    },
+    {
+        "id":339,
+        "response":"def check(string):\n    if set(string).issubset({\"0\", \"1\"}):\n        return \"Yes\"\n    else:\n        return \"No\""
+    },
+    {
+        "id":340,
+        "response":"def minimum_Length(s: str) -> int:\n    stack = []\n    for char in s:\n        if stack and stack[-1] == char:\n            stack.pop()\n        else:\n            stack.append(char)\n    return len(stack)\n\nassert minimum_Length(\"mnm\") == 1"
+    },
+    {
+        "id":341,
+        "response":"from collections import Counter\n\ndef first_Element(arr, n, k):\n    count = Counter(arr)\n    for i in arr:\n        if count[i] == k:\n            return i\n    return -1"
+    },
+    {
+        "id":342,
+        "response":"def unique_Characters(str):\n    return len(str) == len(set(str))"
+    },
+    {
+        "id":343,
+        "response":"def remove_column(list1, n):\n    return [sublist[:n] + sublist[n+1:] for sublist in list1]"
+    },
+    {
+        "id":344,
+        "response":"def tn_ap(a, n, d):\n    return a + (n - 1) * d"
+    },
+    {
+        "id":345,
+        "response":"import math\n\ndef count_Rectangles(radius):\n    count = 0\n    diameter = 2 * radius\n    for w in range(1, diameter + 1):\n        for h in range(1, diameter + 1):\n            d = (w ** 2 + h ** 2) \/ 4\n            if d <= radius ** 2 and w <= diameter and h <= diameter:\n                count += 1\n    return count"
+    },
+    {
+        "id":346,
+        "response":"def find_angle(a, b):\n    return 180 - a - b"
+    },
+    {
+        "id":347,
+        "response":"def find_max(test_list):\n    return max(max(i) for i in test_list)"
+    },
+    {
+        "id":348,
+        "response":"from typing import List\n\ndef moddiv_list(nums1: List[int], nums2: List[int]) -> List[int]:\n    return list(map(lambda x, y: x % y if y != 0 else 0, nums1, nums2))"
+    },
+    {
+        "id":349,
+        "response":"import math\n\ndef Check_Solution(a, b, c):\n    D = b**2 - 4*a*c\n    if D < 0:\n        return \"No\"\n    x1 = (-b + math.sqrt(D))\/(2*a)\n    x2 = (-b - math.sqrt(D))\/(2*a)\n    if x1 == 2*x2 or x2 == 2*x1:\n        return \"Yes\"\n    else:\n        return \"No\""
+    },
+    {
+        "id":350,
+        "response":"def get_carol(n):\n    if n == 1:\n        return 1\n    elif n == 2:\n        return 7\n    else:\n        carol_numbers = [1, 7]\n        for _ in range(2, n):\n            carol_numbers.append(2 * carol_numbers[-1] + carol_numbers[-2])\n        return carol_numbers[-1]"
+    },
+    {
+        "id":351,
+        "response":"def remove_empty(list1):\n    return [i for i in list1 if i != []]"
+    },
+    {
+        "id":352,
+        "response":"from collections import Counter\ndef max_occurrences(nums):\n    count = Counter(nums)\n    max_count = max(count.values())\n    for num, freq in count.items():\n        if freq == max_count:\n            return num"
+    },
+    {
+        "id":353,
+        "response":"from typing import List, Tuple\n\ndef add_K_element(test_list: List[Tuple[int, int, int]], K: int) -> List[Tuple[int, int, int]]:\n    return [tuple(i + K for i in tup) for tup in test_list]"
+    },
+    {
+        "id":354,
+        "response":"def make_flip(ch):\n    flip_count_start_with_0 = 0\n    flip_count_start_with_1 = 0\n    for i in range(len(ch)):\n        if i % 2 == 0:\n            if ch[i] != '0':\n                flip_count_start_with_0 += 1\n            if ch[i] != '1':\n                flip_count_start_with_1 += 1\n        else:\n            if ch[i] != '1':\n                flip_count_start_with_0 += 1\n            if ch[i] != '0':\n                flip_count_start_with_1 += 1\n    return min(flip_count_start_with_0, flip_count_start_with_1)"
+    },
+    {
+        "id":355,
+        "response":"import math\n\ndef count_Digit(n):\n    if n == 0:\n        return 1\n    return math.floor(math.log10(abs(n))) + 1"
+    },
+    {
+        "id":356,
+        "response":"import itertools\n\ndef adjacent_num_product(list_nums):\n    if len(list_nums) < 2:\n        return None\n    products = [a * b for a, b in itertools.pairwise(list_nums)]\n    return max(products)"
+    },
+    {
+        "id":357,
+        "response":"import sys\n\nclass Node:\n    def __init__(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\ndef height(node):\n    if node is None:\n        return 0\n    return 1 + max(height(node.left), height(node.right))\n\ndef is_balanced(node):\n    if node is None:\n        return True\n    left_height = height(node.left)\n    right_height = height(node.right)\n    return (abs(left_height - right_height) <= 1 and \n            is_balanced(node.left) and \n            is_balanced(node.right))\n\ndef check_balance(root):\n    return is_balanced(root)\n\ndef main():\n    root = Node(1)\n    root.left = Node(2)\n    root.right = Node(3)\n    root.left.left = Node(4)\n    root.left.right = Node(5)\n\n    assert check_balance(root) == True\n\n    root.left.left.left = Node(6)\n    root.left.left.left.left = Node(7)\n\n    assert check_balance(root) == False\n\nif __name__ == \"__main__\":\n    root = Node(1)\n    assert check_balance(root) == True\n    main()"
+    },
+    {
+        "id":358,
+        "response":"import typing\n\ndef repeat_tuples(test_tup: typing.Tuple, N: int) -> typing.Tuple:\n    return (test_tup,) * N"
+    },
+    {
+        "id":359,
+        "response":"def lateralsurface_cuboid(l, w, h):\n    return 2*h*(l + w)"
+    },
+    {
+        "id":360,
+        "response":"def float_sort(price):\n    return sorted(price, key=lambda x: float(x[1]), reverse=True)"
+    },
+    {
+        "id":361,
+        "response":"def smallest_missing(A, left_element, right_element):\n    A_set = set(A)\n    for i in range(left_element, right_element + 2):\n        if i not in A_set:\n            return i\n    return right_element + 1"
+    },
+    {
+        "id":362,
+        "response":"import heapq\n\ndef heap_assending(nums):\n    heapq.heapify(nums)\n    return [heapq.heappop(nums) for _ in range(len(nums))]"
+    },
+    {
+        "id":363,
+        "response":"def volume_cuboid(l, w, h):\n    return l * w * h"
+    },
+    {
+        "id":364,
+        "response":"import itertools\n\ndef permute_string(s):\n    perms = [''.join(p) for p in itertools.permutations(s)]\n    return sorted(list(set(perms)))\n\nassert permute_string('ab')==['ab', 'ba']"
+    },
+    {
+        "id":365,
+        "response":"def round_num(n, m):\n    return n - (n % m)"
+    },
+    {
+        "id":366,
+        "response":"from typing import Tuple, Union\nfrom collections import Counter\n\ndef remove_replica(test_tup: Tuple[Union[int, str]]) -> Tuple[Union[int, str]]:\n    count = Counter(test_tup)\n    result = []\n    for i in test_tup:\n        if count[i] > 1:\n            count[i] -= 1\n            result.append('MSP')\n        else:\n            result.append(i)\n    return tuple(result)\n\nassert remove_replica((1, 1, 4, 4, 4, 5, 5, 6, 7, 7)) == (1, 'MSP', 4, 'MSP', 'MSP', 5, 'MSP', 6, 7, 'MSP')"
+    },
+    {
+        "id":367,
+        "response":"def remove_Char(s, c):\n    return s.replace(c, \"\")"
+    },
+    {
+        "id":368,
+        "response":"def move_first(test_list):\n    if len(test_list) > 0:\n        return [test_list[-1]] + test_list[:-1]\n    else:\n        return test_list"
+    },
+    {
+        "id":369,
+        "response":"def surfacearea_cuboid(l, w, h):\n    return 2 * (l * w + w * h + h * l)"
+    },
+    {
+        "id":370,
+        "response":"def multi_list(rownum, colnum):\n    return [[i*j for j in range(colnum)] for i in range(rownum)]"
+    },
+    {
+        "id":371,
+        "response":"def index_on_inner_list(list_data, index_no):\n    return sorted(list_data, key=lambda x: x[index_no])"
+    },
+    {
+        "id":372,
+        "response":"from typing import List\n\ndef find_rotation_count(A: List[int]) -> int:\n    low, high = 0, len(A) - 1\n    if A[low] <= A[high]:\n        return 0\n    while low <= high:\n        mid = (low + high) \/\/ 2\n        if A[mid] > A[mid + 1]:\n            return mid + 1\n        if A[low] <= A[mid]:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\nassert find_rotation_count([8, 9, 10, 1, 2, 3, 4, 5, 6, 7]) == 3"
+    },
+    {
+        "id":373,
+        "response":"def even_bit_toggle_number(n) :\n    mask = 0\n    i = 0\n    while i < 32:\n        if i % 2 == 0:\n            mask |= 1 << i\n        i += 1\n    return n ^ mask"
+    },
+    {
+        "id":374,
+        "response":"from collections import Counter\n\ndef frequency_Of_Smallest(n,arr):\n    count = Counter(arr)\n    min_val = min(arr)\n    return count[min_val]"
+    },
+    {
+        "id":375,
+        "response":"def get_perrin(n):\n    if n == 0:\n        return 3\n    elif n == 1:\n        return 0\n    elif n == 2:\n        return 2\n    else:\n        a, b, c = 3, 0, 2\n        for _ in range(3, n + 1):\n            a, b, c = b, c, 2 * b + a\n        return c"
+    },
+    {
+        "id":376,
+        "response":"def swap_count(s):\n    stack = []\n    count = 0\n    for char in s:\n        if char == '[':\n            stack.append(char)\n        elif char == ']':\n            if not stack:\n                stack.append('[')\n                count += 1\n            elif stack[-1] != '[':\n                stack.pop()\n            else:\n                stack.pop()\n    count += len(stack) \/\/ 2\n    return count"
+    },
+    {
+        "id":377,
+        "response":"import re\n\ndef even_or_odd(N):\n    decimal = int(N, 16)\n    if decimal % 2 == 0:\n        return \"Even\"\n    else:\n        return \"Odd\""
+    },
+    {
+        "id":378,
+        "response":"import math\n\ndef highest_Power_of_2(n):\n    if n <= 0:\n        return 0\n    return 2 ** math.floor(math.log2(n))"
+    },
+    {
+        "id":379,
+        "response":"def find_lucas(n):\n    if n == 0:\n        return 2\n    elif n == 1:\n        return 1\n    else:\n        a, b = 2, 1\n        for _ in range(2, n + 1):\n            a, b = b, a + b\n        return b"
+    },
+    {
+        "id":380,
+        "response":"def add_string(lst, string):\n    return [string.format(i) for i in lst]"
+    },
+    {
+        "id":381,
+        "response":"from typing import List\n\ndef convert_list_dictionary(*args: List) -> List:\n    return [{k: {v1: v2}} for k, v1, v2 in zip(*args)]"
+    },
+    {
+        "id":382,
+        "response":"import functools\n\ndef get_max_sum(n):\n    @functools.lru_cache(None)\n    def dp(n):\n        if n <= 1:\n            return n\n        max_sum = 0\n        for i in [n\/\/2, n\/\/3, n\/\/4, n\/\/5]:\n            if i >= 1:\n                max_sum += dp(i)\n        return max(max_sum, n)\n\n    return dp(n)\n\nassert get_max_sum(60) == 106"
+    },
+    {
+        "id":383,
+        "response":"from typing import List, Tuple\n\ndef max_length_list(input_list: List[List[int]]) -> Tuple[int, List[int]]:\n    max_len = max(len(sublist) for sublist in input_list)\n    max_len_sublist = list(filter(lambda x: len(x) == max_len, input_list))[0]\n    return max_len, max_len_sublist\n\nassert max_length_list([[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]])==(3, [13, 15, 17])"
+    },
+    {
+        "id":384,
+        "response":"def check_distinct(test_tup):\n    return len(test_tup) == len(set(test_tup))"
+    },
+    {
+        "id":385,
+        "response":"from collections import Counter\n\ndef first_non_repeating_character(str1):\n    char_count = Counter(str1)\n    for char in str1:\n        if char_count[char] == 1:\n            return char\n    return None"
+    },
+    {
+        "id":386,
+        "response":"def check_char(string):\n    if not string:\n        return \"Invalid\"\n    if string[0] == string[-1]:\n        return \"Valid\"\n    else:\n        return \"Invalid\""
+    },
+    {
+        "id":387,
+        "response":"def median_numbers(a, b, c):\n    numbers = [a, b, c]\n    numbers.sort()\n    return numbers[1]"
+    },
+    {
+        "id":388,
+        "response":"def sum_of_digits(nums):\n    return sum(sum(int(digit) for digit in str(num)) for num in nums)"
+    },
+    {
+        "id":389,
+        "response":"import operator\ndef bitwise_xor(test_tup1, test_tup2):\n    return tuple(map(operator.xor, test_tup1, test_tup2))"
+    },
+    {
+        "id":390,
+        "response":"from typing import List, Tuple\nfrom collections import Counter\n\ndef extract_freq(test_list: List[Tuple[int, int]]) -> int:\n    freq = Counter(frozenset(tup) for tup in test_list)\n    return len(freq)"
+    },
+    {
+        "id":391,
+        "response":"from typing import Tuple\n\ndef add_nested_tuples(test_tup1: Tuple[Tuple[int, int], ...], test_tup2: Tuple[Tuple[int, int], ...]) -> Tuple[Tuple[int, int], ...]:\n    return tuple((a[0] + b[0], a[1] + b[1]) for a, b in zip(test_tup1, test_tup2))"
+    },
+    {
+        "id":392,
+        "response":"import math\n\ndef ncr_modp(n, r, p):\n    if r > n - r:\n        r = n - r\n    res = 1\n    for i in range(r):\n        res = (res * (n - i)) % p\n        res = (res * pow(i + 1, p - 2, p)) % p\n    return res"
+    },
+    {
+        "id":393,
+        "response":"import re\nfrom typing import Optional\n\ndef is_valid_URL(str: str) -> Optional[bool]:\n    pattern = re.compile(\n        r'^(?:http|ftp)s?:\/\/'  # http:\/\/ or https:\/\/\n        r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\\.)+(?:[A-Z]{2,6}\\.?|[A-Z0-9-]{2,}\\.?)|'  # domain...\n        r'localhost|'  # localhost...\n        r'\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})'  # ...or ip\n        r'(?::\\d+)?'  # optional port\n        r'(?:\/?|[\/?]\\S+)$', re.IGNORECASE)\n    return bool(pattern.match(str))"
+    },
+    {
+        "id":394,
+        "response":"def minimum(a, b):\n    if a < b:\n        return a\n    else:\n        return b"
+    },
+    {
+        "id":395,
+        "response":"def check_tuplex(tuplex, tuple1):\n    return tuple1 in tuplex"
+    },
+    {
+        "id":396,
+        "response":"def find_Parity(x: int) -> str:\n    if x % 2 == 0:\n        return \"Even Parity\"\n    else:\n        return \"Odd Parity\""
+    },
+    {
+        "id":397,
+        "response":"def rearrange_bigger(n):\n    digits = [int(x) for x in str(n)]\n    for i in range(len(digits) - 1, 0, -1):\n        if digits[i - 1] < digits[i]:\n            break\n    else:\n        return -1\n\n    min_greater_digit_idx = i\n    for j in range(i, len(digits)):\n        if digits[j] > digits[i - 1] and digits[j] <= digits[min_greater_digit_idx]:\n            min_greater_digit_idx = j\n\n    digits[i - 1], digits[min_greater_digit_idx] = digits[min_greater_digit_idx], digits[i - 1]\n    digits[i:] = digits[i:][::-1]\n\n    return int(''.join(map(str, digits)))\n\nassert rearrange_bigger(12) == 21"
+    },
+    {
+        "id":398,
+        "response":"import heapq\n\ndef k_smallest_pairs(nums1, nums2, k):\n    if not nums1 or not nums2:\n        return []\n    \n    queue = []\n    for i in range(min(k, len(nums1))):\n        heapq.heappush(queue, (nums1[i] + nums2[0], i, 0))\n    \n    result = []\n    while queue and len(result) < k:\n        _, i, j = heapq.heappop(queue)\n        result.append([nums1[i], nums2[j]])\n        \n        if j + 1 < len(nums2):\n            heapq.heappush(queue, (nums1[i] + nums2[j + 1], i, j + 1))\n    \n    return result"
+    },
+    {
+        "id":399,
+        "response":"import math\ndef min_product_tuple(list1):\n    products = [a * b for a, b in list1]\n    return min(products)"
+    },
+    {
+        "id":400,
+        "response":"def min_val(listval):\n    return min([i for i in listval if type(i) == int or type(i) == float])"
+    },
+    {
+        "id":401,
+        "response":"import re\n\ndef snake_to_camel(word):\n    components = word.split('_')\n    return ''.join(x.capitalize() for x in components)"
+    },
+    {
+        "id":402,
+        "response":"def remove_odd(l):\n    return [i for i in l if i % 2 == 0]"
+    },
+    {
+        "id":403,
+        "response":"def extract_nth_element(list1, n):\n    return [tup[n] for tup in list1]"
+    },
+    {
+        "id":404,
+        "response":"def overlapping(list1, list2):\n    set1 = set(list1)\n    set2 = set(list2)\n    return bool(set1.intersection(set2))"
+    },
+    {
+        "id":405,
+        "response":"import itertools\n\ndef max_Product(arr):\n    if len(arr) < 2:\n        return ()\n    max_product = float('-inf')\n    result = ()\n    for pair in itertools.combinations(arr, 2):\n        product = pair[0] * pair[1]\n        if product > max_product:\n            max_product = product\n            result = pair\n    return result"
+    },
+    {
+        "id":406,
+        "response":"def breakSum(n):\n    if n < 10:\n        return n\n    else:\n        dp = [0] * (n + 1)\n        for i in range(1, n + 1):\n            max_val = 0\n            for j in range(1, i):\n                max_val = max(max_val, j * (i - j))\n            dp[i] = max(max_val, i)\n        max_sum = 0\n        for i in range(1, n):\n            for j in range(1, n - i):\n                k = n - i - j\n                if i * j * k > 0:\n                    max_sum = max(max_sum, dp[i] + dp[j] + dp[k])\n        return max_sum"
+    },
+    {
+        "id":407,
+        "response":"from itertools import groupby\nfrom typing import List, Tuple\n\ndef group_tuples(Input: List[Tuple]) -> List[Tuple]:\n    sorted_input = sorted(Input, key=lambda x: x[0])\n    result = []\n    for k, g in groupby(sorted_input, key=lambda x: x[0]):\n        group_list = list(g)\n        values = [t[1] for t in group_list]\n        result.append((k, *values))\n    return result"
+    },
+    {
+        "id":408,
+        "response":"def Find_Max(lst):\n    return max(lst, key=len)"
+    },
+    {
+        "id":409,
+        "response":"import math\n\ndef round_and_sum(list1):\n    rounded_list = [round(num) for num in list1]\n    total_sum = sum(rounded_list)\n    return total_sum * len(list1)"
+    },
+    {
+        "id":410,
+        "response":"def cube_Sum(n):\n    return sum(i**3 for i in range(2, 2*n+1, 2))"
+    },
+    {
+        "id":411,
+        "response":"def concatenate_tuple(test_tup):\n    return '-'.join(map(str, test_tup))"
+    },
+    {
+        "id":412,
+        "response":"import math\n\ndef find_Average_Of_Cube(n):\n    sum_of_cubes = (n * (n + 1) \/ 2) ** 2\n    average = sum_of_cubes \/ n\n    return average"
+    },
+    {
+        "id":413,
+        "response":"def get_maxgold(gold, m, n):\n    dp = [[0 for _ in range(n)] for _ in range(m)]\n    dp[0][0] = gold[0][0]\n    for i in range(1, n):\n        dp[0][i] = dp[0][i-1] + gold[0][i]\n    for i in range(1, m):\n        dp[i][0] = dp[i-1][0] + gold[i][0]\n    for i in range(1, m):\n        for j in range(1, n):\n            dp[i][j] = gold[i][j] + max(dp[i-1][j], dp[i][j-1])\n    return dp[m-1][n-1]\n\nassert get_maxgold([[1, 3, 1, 5],[2, 2, 4, 1],[5, 0, 2, 3],[0, 6, 1, 2]],4,4)==16"
+    },
+    {
+        "id":414,
+        "response":"def extract_rear(test_tuple):\n    return [string[-1] for string in test_tuple]"
+    },
+    {
+        "id":415,
+        "response":"def count_element_in_list(list1, x):\n    return sum(1 for sublist in list1 if x in sublist)"
+    },
+    {
+        "id":416,
+        "response":"from typing import List\n\ndef filter_oddnumbers(nums: List[int]) -> List[int]:\n    odd_filter = lambda x: x % 2 != 0\n    return list(filter(odd_filter, nums))"
+    },
+    {
+        "id":417,
+        "response":"import re\ndef change_date_format(dt):\n    return re.sub(r'(\\d{4})-(\\d{2})-(\\d{2})', r'\\3-\\2-\\1', dt)"
+    },
+    {
+        "id":418,
+        "response":"def shell_sort(my_list):\n    n = len(my_list)\n    gap = n\/\/2\n\n    while gap > 0:\n        for i in range(gap, n):\n            temp = my_list[i]\n            j = i\n            while j >= gap and my_list[j-gap] > temp:\n                my_list[j] = my_list[j-gap]\n                j -= gap\n            my_list[j] = temp\n        gap \/\/= 2\n    return my_list"
+    },
+    {
+        "id":419,
+        "response":"import operator\n\ndef and_tuples(test_tup1, test_tup2):\n    return tuple(map(lambda x, y: x % y, test_tup1, test_tup2))"
+    },
+    {
+        "id":420,
+        "response":"def parabola_directrix(a, b, c):\n    return c - b**2\/(4*a) - 1\/(4*a)"
+    },
+    {
+        "id":421,
+        "response":"def common_element(list1, list2):\n    set1 = set(list1)\n    set2 = set(list2)\n    return len(set1.intersection(set2)) > 0"
+    },
+    {
+        "id":422,
+        "response":"def median_trapezium(base1, base2, height):\n    return (base1 + base2) \/ 2"
+    },
+    {
+        "id":423,
+        "response":"def check_greater(arr, number):\n    if all(number > elem for elem in arr):\n        return 'Yes, entered number is greater than those in the array'\n    elif all(number < elem for elem in arr):\n        return 'No, entered number is less than those in the array'\n    else:\n        return 'Yes, entered number is greater than some elements in the array'"
+    },
+    {
+        "id":424,
+        "response":"import re\n\ndef text_match_one(text):\n    if re.search(\"b+\", text):\n        return text\n    else:\n        return 'Not matched!'"
+    },
+    {
+        "id":425,
+        "response":"def last_Digit(n):\n    return n % 10"
+    },
+    {
+        "id":426,
+        "response":"def neg_nos(list1):\n    return tuple(x for x in list1 if x < 0)"
+    },
+    {
+        "id":427,
+        "response":"def remove_odd(str1):\n    return ''.join([char for i, char in enumerate(str1) if i % 2 == 1])"
+    },
+    {
+        "id":428,
+        "response":"from typing import List, Tuple\n\ndef count_bidirectional(test_list: List[Tuple[int, int]]) -> str:\n    seen = set()\n    count = 0\n    for tup in test_list:\n        if (tup[1], tup[0]) in seen:\n            count += 1\n        seen.add(tup)\n    return str(count)"
+    },
+    {
+        "id":429,
+        "response":"def multiple_to_single(L):\n    return int(''.join(map(str, L)))"
+    },
+    {
+        "id":430,
+        "response":"import re\nfrom typing import Tuple\n\ndef find_adverb_position(text: str) -> Tuple[int, int, str]:\n    words = text.split()\n    adverb_position = None\n    adverb_word = None\n    for i, word in enumerate(words):\n        word = re.sub(r'[^\\w\\s]', '', word)\n        if word.endswith('ly') and word != 'daily' and word != 'early' and word != 'friendly':\n            adverb_position = (i, len(word) + i)\n            adverb_word = word\n            break\n    if adverb_position:\n        return (*adverb_position, adverb_word)\n    else:\n        return ()"
+    },
+    {
+        "id":431,
+        "response":"def surfacearea_cube(l):\n    return 6*l**2"
+    },
+    {
+        "id":432,
+        "response":"def positive_count(nums):\n    count = sum(1 for num in nums if num > 0)\n    return round(count \/ len(nums), 2)"
+    },
+    {
+        "id":433,
+        "response":"def largest_neg(list1):\n    neg_nums = [num for num in list1 if num < 0]\n    return min(neg_nums) if neg_nums else None"
+    },
+    {
+        "id":434,
+        "response":"import typing\n\ndef trim_tuple(test_list: typing.List[typing.Tuple[int, ...]], K: int) -> str:\n    return str([tup[:K] for tup in test_list])"
+    },
+    {
+        "id":435,
+        "response":"from typing import Tuple\n\ndef index_multiplication(test_tup1: Tuple[Tuple[int, int], ...], test_tup2: Tuple[Tuple[int, int], ...]) -> Tuple[Tuple[int, int], ...]:\n    return tuple((t1[0] * t2[0], t1[1] * t2[1]) for t1, t2 in zip(test_tup1, test_tup2))"
+    },
+    {
+        "id":436,
+        "response":"def count_Occurrence(tup, lst):\n    return sum(1 for elem in tup if elem in lst)"
+    },
+    {
+        "id":437,
+        "response":"def cube_nums(nums):\n    return list(map(lambda x: x ** 3, nums))"
+    },
+    {
+        "id":438,
+        "response":"def cal_sum(n):\n    def is_prime(num):\n        if num < 2:\n            return False\n        for i in range(2, int(num**0.5) + 1):\n            if num % i == 0:\n                return False\n        return True\n\n    return sum(i for i in range(2, n+1) if is_prime(i))"
+    },
+    {
+        "id":439,
+        "response":"import math\n\ndef check_Triangle(x1, y1, x2, y2, x3, y3):\n    a = math.sqrt((x2-x1)**2 + (y2-y1)**2)\n    b = math.sqrt((x3-x2)**2 + (y3-y2)**2)\n    c = math.sqrt((x1-x3)**2 + (y1-y3)**2)\n    if a + b > c and a + c > b and b + c > a:\n        return 'Yes'\n    else:\n        return 'No'"
+    },
+    {
+        "id":440,
+        "response":"def extract_string(str_list, length):\n    return [s for s in str_list if len(s) == length]"
+    },
+    {
+        "id":441,
+        "response":"import re\n\ndef remove_whitespaces(text1):\n    return re.sub(r'\\s+', '', text1)"
+    },
+    {
+        "id":442,
+        "response":"def loss_amount(actual_cost, sale_amount):\n    if actual_cost > sale_amount:\n        return actual_cost - sale_amount\n    else:\n        return None"
+    },
+    {
+        "id":443,
+        "response":"def sumofFactors(n) :\n    sum = 0\n    for i in range(1, n + 1):\n        if n % i == 0 and i % 2 == 0:\n            sum += i\n    return sum"
+    },
+    {
+        "id":444,
+        "response":"import re\n\ndef text_match_wordz(text):\n    if re.search(r'\\b\\w*z\\w*\\b', text):\n        return 'Found a match!'\n    else:\n        return 'Not found'"
+    },
+    {
+        "id":445,
+        "response":"def check_monthnumb_number(monthnum2):\n    import calendar\n    return calendar.monthrange(2024, monthnum2)[1] == 31"
+    },
+    {
+        "id":446,
+        "response":"def reverse_string_list(stringlist):\n    return [s[::-1] for s in stringlist]"
+    },
+    {
+        "id":447,
+        "response":"def Find_Min(lst):\n    return min(lst, key=len)"
+    },
+    {
+        "id":448,
+        "response":"def rectangle_area(l, b):\n    return l * b"
+    },
+    {
+        "id":449,
+        "response":"import re\n\ndef remove_uppercase(str1):\n    return re.sub('[A-Z]', '', str1)\n\nassert remove_uppercase('cAstyoUrFavoRitETVshoWs') == 'cstyoravoitshos'"
+    },
+    {
+        "id":450,
+        "response":"def Extract(lst):\n    return [sublist[0] for sublist in lst]"
+    },
+    {
+        "id":451,
+        "response":"def upper_ctr(str):\n    return sum(1 for c in str if c.isupper())\n\nassert upper_ctr('PYthon') == 1"
+    },
+    {
+        "id":452,
+        "response":"import itertools\n\ndef combinations_list(list1):\n    result = []\n    for r in range(len(list1) + 1):\n        for combination in itertools.permutations(list1, r):\n            result.append(list(combination))\n    result = [x for x in result if len(x) == 0 or tuple(sorted(x)) not in [tuple(sorted(y)) for y in result if len(y) < len(x)]]\n    result.sort(key=lambda x: (len(x), tuple(sorted(x))))\n    return result\n\nassert combinations_list(['orange', 'red', 'green', 'blue'])==[[], ['orange'], ['red'], ['green'], ['blue'], ['orange', 'red'], ['red', 'orange'], ['orange', 'green'], ['green', 'orange'], ['orange', 'blue'], ['blue', 'orange'], ['red', 'green'], ['green', 'red'], ['red', 'blue'], ['blue', 'red'], ['green', 'blue'], ['blue', 'green'], ['orange', 'red', 'green'], ['red', 'orange', 'green'], ['red', 'green', 'orange'], ['green', 'orange', 'red'], ['green', 'red', 'orange'], ['orange', 'red', 'blue'], ['red', 'orange', 'blue'], ['red', 'blue', 'orange'], ['blue', 'orange', 'red'], ['blue', 'red', 'orange'], ['orange', 'green', 'blue'], ['green', 'orange', 'blue'], ['green', 'blue', 'orange'], ['blue', 'orange', 'green'], ['blue', 'green', 'orange'], ['red', 'green', 'blue'], ['green', 'red', 'blue'], ['green', 'blue', 'red'], ['blue', 'red', 'green'], ['blue', 'green', 'red'], ['orange', 'red', 'green', 'blue'], ['red', 'orange', 'green', 'blue'], ['red', 'green', 'orange', 'blue'], ['red', 'green', 'blue', 'orange'], ['green', 'orange', 'red', 'blue'], ['green', 'red', 'orange', 'blue'], ['green', 'red', 'blue', 'orange'], ['green', 'blue', 'orange', 'red'], ['green', 'blue', 'red', 'orange'], ['blue', 'orange', 'red', 'green'], ['blue', 'red', 'orange', 'green'], ['blue', 'red', 'green', 'orange'], ['blue', 'green', 'orange', 'red'], ['blue', 'green', 'red', 'orange']]"
+    },
+    {
+        "id":453,
+        "response":"import math\n\ndef max_subarray_product(arr):\n    if not arr:\n        return 0\n\n    max_product = arr[0]\n    min_product = arr[0]\n    result = arr[0]\n\n    for i in range(1, len(arr)):\n        if arr[i] < 0:\n            max_product, min_product = min_product, max_product\n\n        max_product = max(arr[i], max_product * arr[i])\n        min_product = min(arr[i], min_product * arr[i])\n\n        result = max(result, max_product)\n\n    return result\n\nassert max_subarray_product([1, -2, -3, 0, 7, -8, -2]) == 112"
+    },
+    {
+        "id":454,
+        "response":"def check_value(dict, n):\n    return all(value == n for value in dict.values())"
+    },
+    {
+        "id":455,
+        "response":"def drop_empty(dict1):\n    return {key: value for key, value in dict1.items() if value is not None and value != \"\"}"
+    },
+    {
+        "id":456,
+        "response":"import math\n\ndef find_peak_util(arr, n):\n    low = 0\n    high = n - 1\n    while low <= high:\n        mid = (low + high) \/\/ 2\n        if (mid == 0 or arr[mid] >= arr[mid - 1]) and (mid == n - 1 or arr[mid] >= arr[mid + 1]):\n            return mid\n        elif mid > 0 and arr[mid - 1] > arr[mid]:\n            high = mid - 1\n        else:\n            low = mid + 1\n    return -1\n\nassert find_peak_util([1, 3, 20, 4, 1, 0], 6) == 2"
+    },
+    {
+        "id":457,
+        "response":"def decimal_to_Octal(deciNum):\n    return int(oct(deciNum)[2:])"
+    },
+    {
+        "id":458,
+        "response":"import math\n\ndef max_product(arr, n):\n    dp = [1]*n\n    for i in range(n):\n        dp[i] = arr[i]\n    max_product_so_far = dp[0]\n    \n    for i in range(1, n):\n        for j in range(i):\n            if arr[i] > arr[j] and dp[i] < dp[j] * arr[i]:\n                dp[i] = dp[j] * arr[i]\n        max_product_so_far = max(max_product_so_far, dp[i])\n        \n    return max_product_so_far\n\nassert max_product([3, 100, 4, 5, 150, 6], 6) == 45000"
+    },
+    {
+        "id":459,
+        "response":"from typing import List\n\ndef max_profit(price: List[int], k: int) -> int:\n    n = len(price)\n    if n < 2:\n        return 0\n    \n    if k >= n \/\/ 2:\n        return sum(max(0, price[i] - price[i-1]) for i in range(1, n))\n    \n    dp = [[0] * n for _ in range(k + 1)]\n    \n    for i in range(1, k + 1):\n        max_diff = -price[0]\n        for j in range(1, n):\n            dp[i][j] = max(dp[i][j-1], price[j] + max_diff)\n            max_diff = max(max_diff, dp[i-1][j] - price[j])\n    \n    return dp[k][n - 1]\n\nassert max_profit([1, 5, 2, 3, 7, 6, 4, 5], 3) == 10"
+    },
+    {
+        "id":460,
+        "response":"from typing import Tuple\n\ndef add_pairwise(test_tup: Tuple[int, ...]) -> Tuple[int, ...]:\n    return tuple(test_tup[i] + test_tup[i+1] for i in range(len(test_tup)-1))"
+    },
+    {
+        "id":461,
+        "response":"import math\n\ndef find_remainder(arr, lens, n):\n    res = 1\n    for i in arr:\n        res = (res * i) % n\n    return res\n\nassert find_remainder([ 100, 10, 5, 25, 35, 14 ],6,11) == 9"
+    },
+    {
+        "id":462,
+        "response":"def check_Consecutive(l):\n    return len(l) == max(l) - min(l) + 1 and len(set(l)) == len(l)"
+    },
+    {
+        "id":463,
+        "response":"def tuple_intersection(test_list1, test_list2):\n    set1 = set(tuple(sorted(t)) for t in test_list1)\n    set2 = set(tuple(sorted(t)) for t in test_list2)\n    return set1 & set2"
+    },
+    {
+        "id":464,
+        "response":"def replace_char(str1, ch, newch):\n    return str1.replace(ch, newch)"
+    },
+    {
+        "id":465,
+        "response":"def sort_counter(dict1):\n    return sorted(dict1.items(), key=lambda x: x[1], reverse=True)"
+    },
+    {
+        "id":466,
+        "response":"def big_sum(nums):\n    return max(nums) + min(nums)"
+    },
+    {
+        "id":467,
+        "response":"def is_lower(string):\n    return string.lower()"
+    },
+    {
+        "id":468,
+        "response":"def remove_lowercase(str1):\n    return ''.join([char for char in str1 if not char.islower()])"
+    },
+    {
+        "id":469,
+        "response":"import math\n\ndef first_Digit(n) :\n    while n >= 10:\n        n = n \/ 10\n    return int(n)\n\nassert first_Digit(123) == 1"
+    },
+    {
+        "id":470,
+        "response":"from collections import Counter\n\ndef get_max_occuring_char(str1):\n    counter = Counter(str1)\n    max_count = max(counter.values())\n    max_chars = [char for char, count in counter.items() if count == max_count]\n    return min(max_chars)"
+    },
+    {
+        "id":471,
+        "response":"def is_subset_sum(set, n, sum):\n    dp = [[False for _ in range(sum + 1)] for _ in range(n + 1)]\n    for i in range(n + 1):\n        dp[i][0] = True\n    for i in range(1, sum + 1):\n        dp[0][i] = False\n    for i in range(1, n + 1):\n        for j in range(1, sum + 1):\n            if j < set[i - 1]:\n                dp[i][j] = dp[i - 1][j]\n            if j >= set[i - 1]:\n                dp[i][j] = dp[i - 1][j] or dp[i - 1][j - set[i - 1]]\n    return dp[n][sum]\nassert is_subset_sum([3, 34, 4, 12, 5, 2], 6, 9)"
+    },
+    {
+        "id":472,
+        "response":"import re\n\ndef match(text):\n    if re.search(r'[A-Z][a-z]+', text):\n        return 'Yes'\n    else:\n        return 'No'"
+    },
+    {
+        "id":473,
+        "response":"import math\n\ndef first_Factorial_Divisible_Number(x):\n    i = 1\n    while True:\n        if math.factorial(i) % x == 0:\n            return i\n        i += 1"
+    },
+    {
+        "id":474,
+        "response":"def remove_matching_tuple(test_list1, test_list2):\n    test_list2_set = set(test_list2)\n    return [t for t in test_list1 if t not in test_list2_set]"
+    },
+    {
+        "id":475,
+        "response":"def is_palindrome(nums):\n    palindromes = [num for num in nums if str(num) == str(num)[::-1]]\n    if palindromes:\n        return max(palindromes)\n    else:\n        return None\n\ndef largest_palindrome(nums, n):\n    palindromes = [num for num in nums if str(num) == str(num)[::-1]]\n    palindromes.sort(reverse=True)\n    if len(palindromes) >= n:\n        return palindromes[n-1]\n    else:\n        return None\n\nassert is_palindrome([1, 232, 54545, 999991]) == 999991\nassert largest_palindrome([1, 232, 54545, 999991], 4) == 54545\nassert is_palindrome([1, 232, 54545]) == 54545"
+    },
+    {
+        "id":476,
+        "response":"import math\n\ndef nCr(n, r, p):\n    binomial_coefficient = math.comb(n, r)\n    probability = binomial_coefficient * (p ** r) * ((1 - p) ** (n - r))\n    return probability"
+    },
+    {
+        "id":477,
+        "response":"def sort_tuple(tup):\n    return sorted(tup, key=lambda x: x[-1])"
+    },
+    {
+        "id":478,
+        "response":"import math\n\ndef area_pentagon(a):\n    return (math.sqrt(25+10*math.sqrt(5))*a**2)\/4"
+    },
+    {
+        "id":479,
+        "response":"from typing import List\nfrom collections import Counter\n\ndef frequency_Of_Largest(n: int, arr: List[int]) -> int:\n    count = Counter(arr)\n    max_val = max(arr)\n    return count[max_val]"
+    },
+    {
+        "id":480,
+        "response":"def extract_symmetric(test_list):\n    symmetric_pairs = set()\n    seen = set()\n    for pair in test_list:\n        reverse_pair = pair[::-1]\n        if reverse_pair in seen:\n            symmetric_pairs.add(tuple(sorted(pair)))\n        seen.add(pair)\n    return symmetric_pairs"
+    },
+    {
+        "id":481,
+        "response":"def sum_gp(a, n, r):\n    if r == 1:\n        return a * n\n    else:\n        return a * (1 - r ** n) \/\/ (1 - r)"
+    },
+    {
+        "id":482,
+        "response":"def binary_search(item_list, item):\n    low = 0\n    high = len(item_list) - 1\n    while low <= high:\n        mid = (low + high) \/\/ 2\n        if item_list[mid] == item:\n            return True\n        elif item_list[mid] < item:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return False"
+    },
+    {
+        "id":483,
+        "response":"import math\n\ndef calculate_polygons(startx, starty, endx, endy, radius):\n    polygons = []\n    for x in range(startx, endx + 1):\n        row = []\n        for y in range(starty, endy + 1):\n            center_x = x \n            center_y = y \n            points = []\n            for i in range(7):\n                angle = 2 * math.pi \/ 6 * i\n                px = center_x + radius * math.cos(angle)\n                py = center_y + radius * math.sin(angle)\n                points.append((px, py))\n            row.append(points)\n        polygons.append(row)\n    return polygons"
+    },
+    {
+        "id":484,
+        "response":"def binary_to_integer(test_tup):\n    binary_str = ''.join(map(str, test_tup))\n    return str(int(binary_str, 2))"
+    },
+    {
+        "id":485,
+        "response":"import re\n\ndef remove_lowercase(str1):\n    return re.sub('[a-z]', '', str1)"
+    },
+    {
+        "id":486,
+        "response":"import heapq\n\ndef heap_queue_smallest(nums, n):\n    return heapq.nsmallest(n, nums)"
+    },
+    {
+        "id":487,
+        "response":"import math\n\ndef surfacearea_cone(r, h):\n    slant_height = math.sqrt(r**2 + h**2)\n    return math.pi * r * (r + slant_height)"
+    },
+    {
+        "id":488,
+        "response":"def gcd(x: int, y: int) -> int:\n    while(y):\n        x, y = y, x % y\n    return x"
+    },
+    {
+        "id":489,
+        "response":"def diameter_circle(r):\n    return 2 * r"
+    },
+    {
+        "id":490,
+        "response":"def concatenate_elements(list):\n    return '  ' + ' '.join(list)"
+    },
+    {
+        "id":491,
+        "response":"def min_cost(cost, m, n):\n    dp = [[0 for _ in range(n + 1)] for _ in range(m + 1)]\n    for i in range(m + 1):\n        dp[i][0] = float('inf')\n    for j in range(n + 1):\n        dp[0][j] = float('inf')\n    dp[0][0] = 0\n    for i in range(m + 1):\n        for j in range(n + 1):\n            if i == 0 and j == 0:\n                continue\n            up = dp[i-1][j] if i > 0 else float('inf')\n            left = dp[i][j-1] if j > 0 else float('inf')\n            if i > 0 and j > 0:\n                dp[i][j] = cost[i-1][j-1] + min(up, left)\n            elif i > 0:\n                dp[i][j] = cost[i-1][0] + up if j == 0 else float('inf')\n            elif j > 0:\n                dp[i][j] = cost[0][j-1] + left if i == 0 else float('inf')\n    return dp[m][n]\n\nassert min_cost([[1, 2, 3], [4, 8, 2], [1, 5, 3]], 2, 2) == 8"
+    },
+    {
+        "id":492,
+        "response":"def similar_elements(test_tup1, test_tup2):\n    return tuple(set(test_tup1) & set(test_tup2))"
+    },
+    {
+        "id":493,
+        "response":"def is_not_prime(n):\n    if n <= 1:\n        return True\n    if n == 2:\n        return False\n    if n % 2 == 0:\n        return True\n    max_divisor = int(n**0.5) + 1\n    for d in range(3, max_divisor, 2):\n        if n % d == 0:\n            return True\n    return False"
+    },
+    {
+        "id":494,
+        "response":"import heapq\n\ndef heap_queue_largest(nums, n):\n    return heapq.nlargest(n, nums)"
+    },
+    {
+        "id":495,
+        "response":"import math\n\ndef count_ways(n):\n    if n == 1:\n        return 0\n    elif n == 2:\n        return 3\n    else:\n        a, b = 1, 3\n        for _ in range(2, n):\n            a, b = b, 2 * a + b\n        return b"
+    },
+    {
+        "id":496,
+        "response":"import re\nimport typing\n\ndef is_one_bit_difference(x: int, y: int) -> bool:\n    return bin(x ^ y).count('1') == 1\n\ndef is_Power_Of_Two(x: int, y: int) -> bool:\n    return is_one_bit_difference(x, y)\n\nassert is_Power_Of_Two(13,9) \nassert is_Power_Of_Two(7,5) \nassert not is_Power_Of_Two(6,5) \nassert not is_Power_Of_Two(8,16)"
+    },
+    {
+        "id":497,
+        "response":"import re\ndef find_char_long(text):\n    return re.findall(r'\\b\\w{4,}\\b', text)"
+    },
+    {
+        "id":498,
+        "response":"from typing import List\n\ndef square_nums(nums: List[int]) -> List[int]:\n    return list(map(lambda x: x ** 2, nums))"
+    },
+    {
+        "id":499,
+        "response":"import math\n\ndef find_Rotations(s: str) -> int:\n    if not s:\n        return 0\n    n = len(s)\n    if n == 1:\n        return 1\n    s += s\n    lps = [0]* (2*n)\n    j = 0\n    for i in range(1, 2*n):\n        while j > 0 and s[i] != s[j]:\n            j = lps[j-1]\n        if s[i] == s[j]:\n            j += 1\n        lps[i] = j\n    max_len = lps[2*n-1]\n    return n \/\/ math.gcd(n, max_len) if max_len != 0 else 1"
+    },
+    {
+        "id":500,
+        "response":"import heapq\n\ndef small_nnum(list1, n):\n    return heapq.nsmallest(n, list1)"
+    }
+]
