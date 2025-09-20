@@ -4,7 +4,7 @@ from pathlib import Path
 
 # ---- paths (adjust if needed) ----
 CSV_PATH = Path("test_phase/data/test_full.csv")
-SUB_PATH = Path("test_phase/english_translated/google/llama_4_maverick_17B_submission.json")
+SUB_PATH = Path("test_phase/tdd/generated/llama_4_maverick_17B_submission.json")
 
 # ---- helpers (no intermediate prints/logs) ----
 def strip_code_fences(s: str) -> str:
